@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root{
+  background-color: #070322;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-bg{
+  background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}
+
+.nav-border{
+  border: 1px solid;
+  border-image-source: linear-gradient(269.87deg, rgba(83, 64, 129, 0.3) 0.18%, rgba(119, 103, 159, 0) 102.37%);
+}
+
+.header-btns-bg{
+  background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}
+
+.header-btns-border{
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #77679F 0%, rgba(119, 103, 159, 0) 100%);
+}
+
+.hero-text {
+  background: linear-gradient(180deg, #FFFFFF 2.39%, rgba(255, 255, 255, 0.3) 91.52%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.get-started-bg{
+  background: radial-gradient(35.55% 100% at 49.58% 0%, #B189FF 0%, #8144F6 100%);
+}
+
+.hero-signin-bg{
+  background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}
+
+.hero-signin-border{
+  border: 1.11px solid;
+  border-image-source: linear-gradient(180deg, #77679F 0%, rgba(119, 103, 159, 0) 100%);
+}
+
+.project-info-text{
+  background: radial-gradient(35.55% 100% at 49.58% 0%, #B189FF 0%, #8144F6 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+
+}
+
+.how-it-works-title{
+  background: linear-gradient(180deg, #FFFFFF 0%, #070322 139.86%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.how-it-works-text{
+  background: linear-gradient(180deg, #FFFFFF 0%, #514A80 139.86%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.our-benefits{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+  conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}
+
+.benefit-icon{
+  background: radial-gradient(50.31% 50.31% at 49.69% 100%, #9769EF 0%, #6C24F5 100%);
+}
+
+.trend-assets-border{
+  border: 1.44px solid;
+  border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) -1.78%, #9769EF 70.48%, #6C24F5 109.39%);
+}
+
+.buy-crypto-bg{
+  background: linear-gradient(90deg, rgba(133, 71, 246, 0.04) 0%, rgba(133, 71, 246, 0.04) 100%);
+
+}
+
+.buy-crypto-border{
+  border: 1.12px solid;
+  border-image-source: linear-gradient(143.44deg, rgba(208, 220, 255, 0.28) -1.16%, rgba(208, 220, 255, 0.025) 65.11%);
+}
+
+.hero-text{
+  background: linear-gradient(180deg, #FFFFFF 0%, #514A80 139.86%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+
+}
+
+.visit-btn{
+  background: radial-gradient(35.55% 100% at 49.58% 0%, #B189FF 0%, #8144F6 100%);
+}
+
+.faq-bg{
+  background: linear-gradient(90deg, rgba(183, 121, 245, 0.2) 0%, rgba(133, 71, 246, 0.1) 100%);
+}
+
+.about-text{
+  background: linear-gradient(180deg, #FFFFFF 2.39%, rgba(255, 255, 255, 0.3) 91.52%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.logo-round{
+  background: linear-gradient(180deg, #8547F6 0%, #BC98FF 100%);
+}
+
+.roadmap-section{
+  background: linear-gradient(90deg, rgba(183, 121, 245, 0.2) 0%, rgba(133, 71, 246, 0.1) 100%);
+}
+
+.indice-bg{
+  background: linear-gradient(90deg, rgba(183, 121, 245, 0.2) 0%, rgba(133, 71, 246, 0.1) 100%);
+}
+
+.auth-text{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(81, 74, 128, 0.5) 139.86%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+}
