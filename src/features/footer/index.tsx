@@ -2,10 +2,10 @@ const footerImg = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 
 export function AppFooter(){
     return (
-        <div className="flex flex-col relative gap-16 py-[150px] px-20">
+        <div className="flex flex-col overflow-y-hidden relative gap-16 pt-[150px] pb-[40px] px-20">
             <img src="/img/logo.svg" alt="logo" className="relative z-10 w-[165px] cursor-pointer pointer-events-none select-none" />
 
-            <div className="flex items-start pb-16 border-b-[1px] border-b-[#FFFFFF1F] justify-between">
+            <div className="flex items-start pb-16 border-b-[1px] z-[2] border-b-[#FFFFFF1F] justify-between">
                 <div className="flex flex-col z-[2] gap-4">
                     <h3 className="text-white font-bold text-[18px] mb-2">About Us</h3>
                     <ul className="flex flex-col text-[16px] gap-3">
@@ -54,18 +54,18 @@ export function AppFooter(){
                     ))}
                 </div>
             </div>
-            <p className="text-[16px] z-[2] text-center text-white">Copyright © Binarrian 2025</p>
+            <p className="text-[16px] mt-[-40px] z-[2] text-center text-white">Copyright © Binarrian 2025</p>
 
-            <img 
-                className={`inset-0 w-full absolute pt-[500px] z-[1] pointer-events-none select-none`}
-                src="/img/arrow-down.png" 
-                alt="arrow-down" 
+            <img
+                className={`inset-0 w-full absolute pt-[530px] z-[1] pointer-events-none select-none`}
+                src="/img/arrow-down.png"
+                alt="arrow-down"
             />
 
-            {/* <img 
-                className="inset-0 w-[120%] absolute bottom-[-1100px] z-[1] pointer-events-none select-none" 
-                src="/img/footer-img.png" 
-                alt="arrow-down" 
+            {/* <img
+                className="inset-0 w-[120%] absolute bottom-[-1100px] z-[1] pointer-events-none select-none"
+                src="/img/footer-img.png"
+                alt="arrow-down"
             /> */}
         </div>
     )

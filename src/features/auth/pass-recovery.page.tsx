@@ -1,4 +1,6 @@
-import { RecoveryPassInput } from "./recovery-pass-input";
+import {RecoveryPassForm} from "@/features/auth/recovery-pass-form.tsx";
+import {NewPasswordForm} from "@/features/auth/new-password-form.tsx";
+import {SecurityVereficationForm} from "@/features/auth/security-verefication-form.tsx";
 
 export function PassRecoveryPage(){
     return (
@@ -6,13 +8,9 @@ export function PassRecoveryPage(){
             <img className="max-h-[95vh]" src="/img/auth.png"/>
             <div className="flex flex-col items-center justify-center w-1/2 h-full">
                 <div className="flex flex-col gap-10">
-                    <h2 className="text-[48px] text-left about-text leading-11">Password<br/> Recovery</h2>
-                    <p className="text-[14px] text-[#9CA3AF] leading-[20px]">Type your e-mail address you used for registration<br/> on our platform below.</p>
-                    <RecoveryPassInput/>
-                    <button className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] w-[335px]">
-                        Continue
-                        <img src="/img/arrow-right.svg" alt="arrow"/>
-                    </button>
+                    {/*<RecoveryPassForm/>*/}
+                    {/*<NewPasswordForm/>*/}
+                    <SecurityVereficationForm/>
                 </div>
             </div>
         </div>

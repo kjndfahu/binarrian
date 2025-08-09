@@ -9,5 +9,12 @@ export const ROUTES = {
   FAQ: "/faq",
   ABOUTUS: "/about-us",
   INDICES: "/indices",
-  COOKIES: "/cookies-policy"
+  COOKIES: "/cookies-policy",
+  BUGBOUNTY: "/bug-bounty-program",
+  REGULATORYLICENSE: "/regulatory-license",
+  LAWENFORECMENT: "/law-enforcement-requests",
+  OVERVIEW: "/overview",
+  TOKENLISTING: "/token-listing",
+  PRIVACYPOLICY: "/privacy-policy",
+  TERMS: "/terms"
 } as const;

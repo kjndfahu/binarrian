@@ -157,3 +157,43 @@
   background-clip: text;
   color: transparent;
 }
+
+.info-bg{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+  conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}
+
+.listing-bg{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+  conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+
+}
+
+.listing-text{
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+  linear-gradient(180deg, #FFFFFF 0%, #070322 139.86%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* для Firefox */
+  background-clip: text;
+  color: transparent;
+
+}
+
+.fast-listing-bg{
+  background: radial-gradient(35.55% 100% at 49.58% 0%, #B189FF 0%, #8144F6 100%);
+}
+
+.send-shadow{
+  box-shadow: 0px 0px 7.31px 0px #DBC9FF inset;
+}
+
+.trend-bg{
+  background: #6C24F599;
+}
+
+.platform-section-bg{
+  background: radial-gradient(35.55% 100% at 49.58% 0%, rgba(177, 137, 255, 0.33) 0%, rgba(129, 68, 246, 0.13) 100%);
+}

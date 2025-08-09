@@ -3,10 +3,11 @@ import { HowItWorks } from "./how-it-works";
 import { OurBenefits } from "./our-benefits";
 import { ProjectInfo } from "./project-info";
 import { TrendAssets } from "./trend-assets";
+import {PlatformInfo} from "@/features/home/platform-info.tsx";
 
 export function HomePage() {
   return (
-    <div className="flex flex-col gap-[100px]">
+    <div className="flex flex-col gap-[100px] overflow-x-hidden">
       <HomeHero padding="pt-[80px]" title="Buy & trade with ease on the trusted crypto exchange" form={
         <div className="flex items-center text-white gap-5">
                 <button className="h-[48px] rounded-full px-5 backdrop-blur-3xl cursor-pointer get-started-bg">
@@ -21,6 +22,7 @@ export function HomePage() {
       <HowItWorks/>
       <OurBenefits/>
       <TrendAssets/>
+        <PlatformInfo/>
     </div>
   );
 }
