@@ -6,9 +6,6 @@ import { AppHeader } from "../features/header";
 import { AppFooter } from "@/features/footer";
 import {DashboardNavbar} from "@/features/dashboard/dashboard-navbar.tsx";
 import {DashboardHeader} from "@/features/dashboard/header/dashboard-header.tsx";
-import TokenListingPage from "@/features/token-listing/token-listing.page.tsx";
-import PrivacyPolicyPage from "@/features/privacy-policy/privacy-policy.page.tsx";
-import TermsPage from "@/features/terms/terms.page.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -199,6 +196,21 @@ export const router = createBrowserRouter([
                 };
             },
         },
+        {
+            path: ROUTES.MARKETS,
+            lazy: async () => {
+                const MarketPage = (await import("../features/market/market.page")).default;
+                return {
+                    element: (
+                        <>
+                            <AppHeader top="top-[80px]"/>
+                            <MarketPage />
+                            <AppFooter />
+                        </>
+                    ),
+                };
+            },
+        },
       {
         path: ROUTES.LOGIN,
         lazy: async () => {
@@ -234,9 +246,99 @@ export const router = createBrowserRouter([
                     element: (
                         <div className="flex">
                             <DashboardNavbar/>
-                            <div className="flex flex-col w-full min-h-screen max-h-screnn">
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
                                 <DashboardHeader/>
                                 <OverviewPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.REFERRALSYSTEM,
+            lazy: async () => {
+                const ReferralSystemPage = (await import("../features/dashboard/referral-system/referral-system.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <ReferralSystemPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.PROFILE,
+            lazy: async () => {
+                const ProfilePage = (await import("../features/dashboard/settings/profile.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <ProfilePage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.TRANSACTIONS,
+            lazy: async () => {
+                const TransactionsPage = (await import("../features/dashboard/transactions/transactions.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <TransactionsPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.STACKING,
+            lazy: async () => {
+                const StackingPage = (await import("../features/dashboard/stacking/stacking.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <StackingPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.SWAP,
+            lazy: async () => {
+                const SwapPage = (await import("../features/dashboard/swap/swap.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <SwapPage/>
                             </div>
                         </div>
                     ),

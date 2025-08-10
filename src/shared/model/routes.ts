@@ -16,5 +16,13 @@ export const ROUTES = {
   OVERVIEW: "/overview",
   TOKENLISTING: "/token-listing",
   PRIVACYPOLICY: "/privacy-policy",
-  TERMS: "/terms"
+  TERMS: "/terms",
+  MARKETS: "/markets",
+  REFERRALSYSTEM: "/referral-system",
+  CRYPTOWALLET: "/crypto-wallet",
+  PROFILE: "/profile",
+  SESSIONS: "/sessions",
+  TRANSACTIONS: "/transactions",
+  STACKING: "/stacking",
+  SWAP: "/swap"
 } as const;
