@@ -5,7 +5,7 @@ import {regulatoryLicense} from "@/shared/model/texts.ts";
 export function RegulatoryLicensePage() {
     return (
         <div className="flex flex-col px-[80px] relative overflow-y-hidden overflow-x-hidden gap-[100px]">
-            <HomeHero title="Regulatory License" padding="pt-[100px]"/>
+            <HomeHero title="Regulatory License" padding="2xl:pt-[100px] lg:pt-[90px] md:pt-0"/>
             <img className="self-center pt-[100px]" src="/img/refulatory.svg" alt="cookies"/>
 
             <IndiceSection text={regulatoryLicense} className="whitespace-pre-line"/>

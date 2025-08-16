@@ -24,5 +24,7 @@ export const ROUTES = {
   SESSIONS: "/sessions",
   TRANSACTIONS: "/transactions",
   STACKING: "/stacking",
-  SWAP: "/swap"
+  SWAP: "/swap",
+  MARKET: "/market",
+  TRADING: "/trading"
 } as const;

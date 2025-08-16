@@ -5,10 +5,10 @@ export function BuyCryptoPage() {
     return (
         <div className="flex flex-col gap-[100px]">
             <HomeHero 
-                padding="pt-[80px]"
+                padding="lg:pt-[80px] md:pt-[40px] pt-[25px]"
                 title="New to cryptocurrency? Here's how to buy it!"
                 text="Check out the list of our partners who provide our clients with a reduced percentage for the purchase of cryptocurrencies from the card!"/>
-            <div className="flex flex-col px-20 mt-[180px] gap-[35px]">
+            <div className="flex flex-col 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 mt-[180px] gap-[35px]">
                 <BuyCryptoBlock image={`/img/buy-crypto/buy-crypto0.png`} text="MoonPay offers a fast and simple way to buy and sell cryptocurrencies. Buy crypto with credit card, bank transfers or Apple Pay today."/>
                 <BuyCryptoBlock image={`/img/buy-crypto/buy-crypto1.png`} text="Its API-driven solutions enable web3 platforms to onboard users to 130+ crypto assets, abstracting away the complexity of user KYC, risk monitoring & compliance, payment methods and customer support."/>
                 <BuyCryptoBlock image={`/img/buy-crypto/buy-crypto2.png`} text="Simplex by Nuvei is empowering the crypto industry with a full fiat infrastructure. We process crypto-to-credit card payments with a 100% guarantee – in case of a fraud chargeback, the merchant gets paid by us."/>

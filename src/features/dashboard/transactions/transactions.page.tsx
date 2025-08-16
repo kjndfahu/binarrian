@@ -89,61 +89,77 @@ export function TransactionsPage() {
     const [tab, setTab] = useState('all')
 
     return (
-        <div style={{ maxHeight: 'calc(100% - 161px)' }} className="flex flex-col relative h-full mx-9 buy-crypto-bg rounded-[12px] border-[1px] border-[#D0DCFF8F]">
-            <div className="flex items-center justify-between pt-4 px-[26px] flex-shrink-0">
-                <h3 className="text-[20px] text-white leading-[24px] font-bold">History Transactions</h3>
-                <div className="flex gap-4 items-center">
-                    <div onClick={() => setTab('all')} className={`text-[16px] ${tab === 'all' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>All</div>
-                    <div onClick={() => setTab('withdraw')} className={`text-[16px] ${tab === 'withdraw' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Withdraw</div>
-                    <div onClick={() => setTab('deposit')} className={`text-[16px] ${tab === 'deposit' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Deposit</div>
-                </div>
-            </div>
-            
-            {/* Transactions Table with Scroll */}
-            <div className="flex flex-col px-[26px] pt-6 flex-1 overflow-hidden">
-                {/* Table Headers */}
-                <div className="flex items-center py-4 border-b border-white/10 flex-shrink-0">
-                    <div className="flex-1">
-                        <span className="text-[16px] text-[#CACACA] tracking-wide">Type</span>
-                    </div>
-                    <div className="flex-1">
-                        <span className="text-[16px] text-[#CACACA] tracking-wide">Date</span>
-                    </div>
-                    <div className="flex-1">
-                        <span className="text-[16px] text-[#CACACA] tracking-wide">Amount</span>
-                    </div>
-                    <div className="flex-1 text-right">
-                        <span className="text-[16px] text-right text-[#CACACA] tracking-wide">Address / Transaction ID</span>
+        <div
+            style={{maxHeight: 'calc(100% - 161px)'}}
+            className="relative rounded-[14px] overflow-x-auto lg:overflow-x-hidden  mx-9 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
+            <div
+                className="flex flex-col relative bg-[#070322] h-full rounded-[12px]">
+                <div className="flex items-center justify-between pt-4 px-[26px] flex-shrink-0">
+                    <h3 className="text-[20px] text-white leading-[24px] font-bold">History Transactions</h3>
+                    <div className="flex gap-4 items-center">
+                        <div onClick={() => setTab('all')}
+                             className={`text-[16px] ${tab === 'all' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>All
+                        </div>
+                        <div onClick={() => setTab('withdraw')}
+                             className={`text-[16px] ${tab === 'withdraw' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Withdraw
+                        </div>
+                        <div onClick={() => setTab('deposit')}
+                             className={`text-[16px] ${tab === 'deposit' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Deposit
+                        </div>
                     </div>
                 </div>
-                
-                {/* Scrollable Table Body */}
-                <div className="flex-1 overflow-y-auto" style={{ maxHeight: 'calc(100% - 120px)', marginRight: '-20px', paddingRight: '20px' }}>
-                    {transactions.map((transaction, index) => (
-                        <div key={index} className="flex items-center py-4 border-b border-white/5">
-                            <div className="flex-1 flex items-center gap-3">
-                                <img src="/img/btc-icon.svg" alt="btc"/>
-                                <span className="text-[16px] font-semibold text-white">{transaction.type}</span>
-                            </div>
-                            <div className="flex-1">
-                                <span className="text-[16px] text-white font-normal">{transaction.date}</span>
-                            </div>
-                            <div className="flex-1">
-                                <span className="text-[16px] text-white">{transaction.amount}</span>
-                            </div>
-                            <div className="flex-1">
-                                <div className="flex flex-col gap-1 text-right">
-                                    <span className="text-[16px] text-white font-normal">{transaction.address}</span>
-                                    <span className="text-[16px] text-white font-normal">{transaction.txId}</span>
+
+                <div className="flex flex-col px-[26px] pt-6 flex-1 min-h-0 min-w-[800px] lg:min-w-0">
+                    <div className="flex items-center py-4 border-b border-white/10 flex-shrink-0">
+                        <div className="flex-1 min-w-0">
+                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Type</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Date</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Amount</span>
+                        </div>
+                        <div className="flex-1 min-w-0 text-right">
+                        <span
+                            className="lg:text-[16px] text-[14px] text-right text-[#CACACA] tracking-wide">Address / Transaction ID</span>
+                        </div>
+                    </div>
+
+                    <div style={{scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent'}}
+                         className="flex-1 pr-[20px] overflow-y-auto min-h-0">
+                        {transactions.map((transaction, index) => (
+                            <div key={index} className="flex items-center py-4 border-b border-white/5">
+                                <div className="flex-1 flex items-center gap-3 min-w-0">
+                                    <img className="w-6 h-6 flex-shrink-0" src="/img/btc-icon.svg" alt="btc"/>
+                                    <span
+                                        className="lg:text-[16px] text-[14px] font-semibold text-white truncate">{transaction.type}</span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <span
+                                        className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.date}</span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <span className="lg:text-[16px] text-[14px] text-white truncate">{transaction.amount}</span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex flex-col gap-1 text-right">
+                                        <span
+                                            className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.address}</span>
+                                        <span
+                                            className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.txId}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
+                <img className="absolute w-full h-[77px] pointer-events-none select-none bottom-0 rounded-[12px]"
+                     src="/img/shadow.png" alt="shadow"/>
             </div>
-            
-            <div className="absolute bottom-0 w-full h-[69px] bg-gradient-to-t from-white/10 via-white/10 to-transparent rounded-b-[12px]"></div>
         </div>
+
     )
 }
 

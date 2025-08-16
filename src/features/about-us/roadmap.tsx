@@ -2,8 +2,8 @@ import { RoadmapSection } from "./roadmap-section";
 
 export function Roadmap(){
     return (
-        <div className="flex flex-col pb-[160px] overflow-y-hidden overflow-x-hidden relative items-center gap-[35px] px-20 mt-[60px]">
-            <h2 className="text-[47px] uppercase font-bold about-text">Roadmap</h2>
+        <div className="flex flex-col pb-[160px] overflow-y-hidden overflow-x-hidden relative items-center gap-[35px] 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 mt-[60px]">
+            <h2 className="2xl:text-[47px] lg:text-[42px] md:text-[38px] sm:text-[34px] text-[32px] uppercase font-bold about-text">Roadmap</h2>
             <RoadmapSection 
                 title='The beginning of the "journey"'
                 text="The ambitious cryptocurrency exchange started its development in 2017 under the leadership of a prominent Blockchain technology expert, Stefan Feldmann. Stefan and his friends were looking for a safe platform to trade cryptocurrency, but at that time there were no fully decentralized crypto exchanges. That's when the idea was born to turn the market upside down by creating a unique project — Binarrian."

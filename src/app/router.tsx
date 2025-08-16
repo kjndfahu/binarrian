@@ -6,6 +6,7 @@ import { AppHeader } from "../features/header";
 import { AppFooter } from "@/features/footer";
 import {DashboardNavbar} from "@/features/dashboard/dashboard-navbar.tsx";
 import {DashboardHeader} from "@/features/dashboard/header/dashboard-header.tsx";
+import {AuthHeader} from "@/features/auth/auth-header.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ export const router = createBrowserRouter([
           return {
             element: (
               <>
-                <AppHeader top="top-[300px]"/>
+                <AppHeader top="2xl:top-[300px] xl:top-[250px] lg:top-[290px] sm:top-[500px] top-[550px]"/>
                 <BuyCryptoPage />
                 <AppFooter />
               </>
@@ -53,7 +54,7 @@ export const router = createBrowserRouter([
           return {
             element: (
               <>
-                <AppHeader top="top-[130px]"/>
+                <AppHeader top="2xl:top-[130px] xl:top-[140px] lg:top-[170px] md:top-[250px] sm:top-[300px] top-[380px]"/>
                 <FAQPage />
                 <AppFooter />
               </>
@@ -68,7 +69,7 @@ export const router = createBrowserRouter([
           return {
             element: (
               <>
-                <AppHeader top="top-[80px]"/>
+                <AppHeader top="2xl:top-[80px] xl:top-[140px] lg:top-[170px] md:top-[100px] sm:top-[130px] top-[190px]"/>
                 <AboutUsPage />
                 <AppFooter />
               </>
@@ -83,7 +84,7 @@ export const router = createBrowserRouter([
           return {
             element: (
               <>
-                <AppHeader top="top-[80px]"/>
+                <AppHeader top="2xl:top-[80px] xl:top-[140px] lg:top-[170px] top-[200px]"/>
                 <IndicesPage />
                 <AppFooter />
               </>
@@ -113,7 +114,7 @@ export const router = createBrowserRouter([
                 return {
                     element: (
                         <>
-                            <AppHeader top="top-[80px]"/>
+                            <AppHeader top="2xl:top-[80px] xl:top-[140px] lg:top-[170px] md:top-[100px] sm:top-[130px] top-[190px]"/>
                             <RegulatoryLicensePage />
                             <AppFooter />
                         </>
@@ -128,7 +129,7 @@ export const router = createBrowserRouter([
           return {
             element: (
               <>
-                <AppHeader top="top-[80px]"/>
+                <AppHeader top="2xl:top-[80px] xl:top-[140px] lg:top-[170px] top-[200px]"/>
                 <CookiesPage />
                 <AppFooter />
               </>
@@ -203,7 +204,7 @@ export const router = createBrowserRouter([
                 return {
                     element: (
                         <>
-                            <AppHeader top="top-[80px]"/>
+                            <AppHeader top="2xl:top-[80px] xl:top-[140px] lg:top-[170px] md:top-[100px] sm:top-[130px] top-[190px]"/>
                             <MarketPage />
                             <AppFooter />
                         </>
@@ -216,7 +217,12 @@ export const router = createBrowserRouter([
         lazy: async () => {
           const LoginPage = (await import("../features/auth/login.page")).default;
           return {
-            element: <LoginPage />,
+            element: (
+                <>
+                    <AuthHeader/>
+                    <LoginPage />
+                </>
+            ),
           };
         },
       },
@@ -293,6 +299,42 @@ export const router = createBrowserRouter([
         },
 
         {
+            path: ROUTES.MARKET,
+            lazy: async () => {
+                const MarketPage = (await import("../features/dashboard/market/market.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <MarketPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.CRYPTOWALLET,
+            lazy: async () => {
+                const CryptoWalletPage = (await import("../features/dashboard/crypto-wallet/crypto-wallet.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <CryptoWalletPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
             path: ROUTES.TRANSACTIONS,
             lazy: async () => {
                 const TransactionsPage = (await import("../features/dashboard/transactions/transactions.page")).default;
@@ -339,6 +381,24 @@ export const router = createBrowserRouter([
                             <div className="flex flex-col w-full min-h-screen max-h-screen">
                                 <DashboardHeader/>
                                 <SwapPage/>
+                            </div>
+                        </div>
+                    ),
+                };
+            },
+        },
+
+        {
+            path: ROUTES.TRADING,
+            lazy: async () => {
+                const TradingPage = (await import("../features/dashboard/trading/trading.page")).default;
+                return {
+                    element: (
+                        <div className="flex">
+                            <DashboardNavbar/>
+                            <div className="flex flex-col w-full min-h-screen max-h-screen">
+                                <DashboardHeader/>
+                                <TradingPage/>
                             </div>
                         </div>
                     ),

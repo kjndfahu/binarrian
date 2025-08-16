@@ -3,8 +3,8 @@ import { IndiceSection } from "./indice-section";
 
 export function IndicesPage (){
     return (
-        <div className="flex flex-col relative pb-[160px] overflow-x-hidden overflow-y-hidden px-20 gap-[100px]">
-            <HomeHero title="Indices" padding="pt-[100px]"/>
+        <div className="flex flex-col relative pb-[160px] overflow-x-hidden overflow-y-hidden 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 gap-[100px]">
+            <HomeHero title="Indices" padding="lg:pt-[100px] sm:pt-[70px] pt-[25px]"/>
             <img className="self-center pt-[50px]" src="/img/indices.svg" alt="indices" />
             <div className="flex flex-col pt-5 gap-[36px]">
                 <IndiceSection title="Indices built on stable, dependable data sources" text="Kraken gives you access to up-to-the-second pricing data with cryptocurrency indices powered by CF Benchmarks. The indices process aggregated trade data from several of the top cryptocurrency exchanges, ensuring that settlement prices are reliable and represent a consensus value of your digital assets. The real time indices and spot rates from this selection of exchanges update every second to calculate a single, comprehensive price. This means you can take positions with the confidence that our price is a consistently accurate reflection of market value. CF Benchmarks is a leading provider of institutional grade indices that promote transparent price information across the cryptocurrency markets."/>

@@ -14,9 +14,9 @@ import {ROUTES} from "@/shared/model/routes.ts";
 
 const routeConfig = {
     "overview": { Logo: OverviewLogo, title: 'Overview', link: ROUTES.OVERVIEW },
-    "trading": { Logo: TradingLogo, title: 'Trading', link: ROUTES.OVERVIEW },
+    "trading": { Logo: TradingLogo, title: 'Trading', link: ROUTES.TRADING },
     "crypto-wallet": { Logo: Wallet, title: 'Crypto Wallet', link: ROUTES.CRYPTOWALLET },
-    "market": { Logo: Market, title: 'Market', link: ROUTES.OVERVIEW },
+    "market": { Logo: Market, title: 'Market', link: ROUTES.MARKET },
     "stacking": { Logo: Stacking, title: 'Stacking', link: ROUTES.STACKING },
     "swap": { Logo: Swap, title: 'Swap', link: ROUTES.SWAP },
     "transactions": { Logo: Transactions, title: 'Transactions', link: ROUTES.TRANSACTIONS },
