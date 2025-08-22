@@ -7,7 +7,7 @@ export function MarketTradesSection(){
     const [tab, setTab] = useState('open-orders')
     return (
         <div
-            className="flex flex-col w-full relative overflow-h-hidden gap-3 h-[311px] rounded-[12px] border-[1px] border-white pt-6 pb-0 w-[55%]">
+            className="flex flex-col w-full relative overflow-hidden gap-3 flex-1 min-h-0 rounded-[12px] border-[1px] border-white pt-6 pb-0">
             <div className="flex items-center justify-between px-6">
                 <h3 className="text-[20px] leading-[24px] text-white font-bold">Market Trades</h3>
                 <div className="flex gap-4 items-center">
@@ -26,7 +26,7 @@ export function MarketTradesSection(){
                     </div>
                 </div>
             </div>
-            <div style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }} className="flex flex-col px-6 overflow-y-auto gap-4">
+            <div className="flex flex-col px-6 gap-4 flex-1 min-h-0 overflow-hidden">
                 <AssetBlock/>
                 <AssetBlock/>
                 <AssetBlock/>

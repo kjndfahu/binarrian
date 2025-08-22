@@ -33,128 +33,136 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function OverallGrowth(){
     const [tab, setTab] = useState("1hour");
-    
+
     return (
-        <div className="flex flex-col gap-[22px] buy-crypto-bg h-full p-6 border-[1px] border-[#D0DCFF8F] rounded-[12px]">
-            <div className="flex items-center justify-between">
-                <h3 className="text-[20px] text-white leading-[24px] font-bold">Overall Growth</h3>
-                <div className="flex gap-4 items-center">
-                    <div onClick={() => setTab('1hour')}
-                         className={`text-[16px] ${tab === '1hour' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>1 hour
-                    </div>
-                    <div onClick={() => setTab('24hour')}
-                         className={`text-[16px] ${tab === '24hour' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>24 hour
-                    </div>
-                    <div onClick={() => setTab('1day')}
-                         className={`text-[16px] ${tab === '1day' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>1 day
-                    </div>
-                    <div onClick={() => setTab('1week')}
-                         className={`text-[16px] ${tab === '1week' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>1 week
+        <div
+            className="relative rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
+            <div
+                className="flex flex-col gap-[22px] bg-[#070322] h-full p-6  rounded-[12px]">
+                <div className="flex items-center justify-between">
+                    <h3 className="text-[20px] text-white leading-[24px] font-bold">Overall Growth</h3>
+                    <div className="flex gap-4 items-center">
+                        <div onClick={() => setTab('1hour')}
+                             className={`text-[16px] ${tab === '1hour' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>1
+                            hour
+                        </div>
+                        <div onClick={() => setTab('24hour')}
+                             className={`text-[16px] ${tab === '24hour' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>24
+                            hour
+                        </div>
+                        <div onClick={() => setTab('1day')}
+                             className={`text-[16px] ${tab === '1day' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>1
+                            day
+                        </div>
+                        <div onClick={() => setTab('1week')}
+                             className={`text-[16px] ${tab === '1week' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>1
+                            week
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            {/* Групповая столбчатая диаграмма */}
-            <div 
-                className="w-full h-[300px] mt-4 select-none" 
-                style={{ 
-                    outline: 'none',
-                    WebkitUserSelect: 'none',
-                    MozUserSelect: 'none',
-                    msUserSelect: 'none',
-                    userSelect: 'none'
-                }}
-                tabIndex={-1}
-            >
-                <ResponsiveContainer 
-                    width="100%" 
-                    height="100%"
-                    style={{ outline: 'none' }}
+
+                <div
+                    className="w-full h-[300px] mt-4 select-none"
+                    style={{
+                        outline: 'none',
+                        WebkitUserSelect: 'none',
+                        MozUserSelect: 'none',
+                        msUserSelect: 'none',
+                        userSelect: 'none'
+                    }}
+                    tabIndex={-1}
                 >
-                    <BarChart 
-                        data={data} 
-                        margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
-                        style={{ outline: 'none' }}
+                    <ResponsiveContainer
+                        width="100%"
+                        height="100%"
+                        style={{outline: 'none'}}
                     >
-                        <defs>
-                            <linearGradient id="orangeGradient" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#FF6B35" stopOpacity={1}/>
-                                <stop offset="100%" stopColor="#FF6B35" stopOpacity={0.6}/>
-                            </linearGradient>
-                            <linearGradient id="purpleGradient" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#8B5CF6" stopOpacity={1}/>
-                                <stop offset="100%" stopColor="#8B5CF6" stopOpacity={0.6}/>
-                            </linearGradient>
-                            <linearGradient id="tealGradient" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#14B8A6" stopOpacity={1}/>
-                                <stop offset="100%" stopColor="#14B8A6" stopOpacity={0.6}/>
-                            </linearGradient>
-                            
-                            {/* Фильтры для свечения */}
-                            <filter id="orangeGlow">
-                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                <feFlood floodColor="#FF6B35" floodOpacity="0.6" result="glowColor"/>
-                                <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
-                                <feMerge> 
-                                    <feMergeNode in="softGlow"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                            <filter id="purpleGlow">
-                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                <feFlood floodColor="#8B5CF6" floodOpacity="0.6" result="glowColor"/>
-                                <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
-                                <feMerge> 
-                                    <feMergeNode in="softGlow"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                            <filter id="tealGlow">
-                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                <feFlood floodColor="#14B8A6" floodOpacity="0.6" result="glowColor"/>
-                                <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
-                                <feMerge> 
-                                    <feMergeNode in="softGlow"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#374151" strokeWidth={0.2} />
-                        <XAxis 
-                            dataKey="period" 
-                            axisLine={false}
-                            tickLine={false}
-                            tick={{ fill: '#9CA3AF', fontSize: 12 }}
-                        />
-                        <YAxis 
-                            axisLine={false}
-                            tickLine={false}
-                            tick={{ fill: '#9CA3AF', fontSize: 12 }}
-                            tickFormatter={(value) => `${value}%`}
-                            width={30}
-                        />
-                        <Tooltip content={<CustomTooltip />} />
-                        <Bar 
-                            dataKey="orange" 
-                            fill="url(#orangeGradient)" 
-                            radius={[4, 4, 0, 0]} 
-                            filter="url(#orangeGlow)"
-                        />
-                        <Bar 
-                            dataKey="purple" 
-                            fill="url(#purpleGradient)" 
-                            radius={[4, 4, 0, 0]} 
-                            filter="url(#purpleGlow)"
-                        />
-                        <Bar 
-                            dataKey="teal" 
-                            fill="url(#tealGradient)" 
-                            radius={[4, 4, 0, 0]} 
-                            filter="url(#tealGlow)"
-                        />
-                    </BarChart>
-                </ResponsiveContainer>
+                        <BarChart
+                            data={data}
+                            margin={{top: 20, right: 0, left: 0, bottom: 5}}
+                            style={{outline: 'none'}}
+                        >
+                            <defs>
+                                <linearGradient id="orangeGradient" x1="0" y1="0" x2="0.33" y2="1">
+                                    <stop offset="0%" stopColor="#FF6B35" stopOpacity={1}/>
+                                    <stop offset="100%" stopColor="#FF6B35" stopOpacity={0.6}/>
+                                </linearGradient>
+                                <linearGradient id="purpleGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity={1}/>
+                                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity={0.6}/>
+                                </linearGradient>
+                                <linearGradient id="tealGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stopColor="#14B8A6" stopOpacity={1}/>
+                                    <stop offset="100%" stopColor="#14B8A6" stopOpacity={0.6}/>
+                                </linearGradient>
+
+
+                                <filter id="orangeGlow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feFlood floodColor="#FF6B35" floodOpacity="0.6" result="glowColor"/>
+                                    <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
+                                    <feMerge>
+                                        <feMergeNode in="softGlow"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                                <filter id="purpleGlow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feFlood floodColor="#8B5CF6" floodOpacity="0.6" result="glowColor"/>
+                                    <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
+                                    <feMerge>
+                                        <feMergeNode in="softGlow"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                                <filter id="tealGlow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feFlood floodColor="#14B8A6" floodOpacity="0.6" result="glowColor"/>
+                                    <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
+                                    <feMerge>
+                                        <feMergeNode in="softGlow"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <CartesianGrid strokeDasharray="3 3" stroke="#374151" strokeWidth={0.2}/>
+                            <XAxis
+                                dataKey="period"
+                                axisLine={false}
+                                tickLine={false}
+                                tick={{fill: '#9CA3AF', fontSize: 12}}
+                            />
+                            <YAxis
+                                axisLine={false}
+                                tickLine={false}
+                                tick={{fill: '#9CA3AF', fontSize: 12}}
+                                tickFormatter={(value) => `${value}%`}
+                                width={30}
+                            />
+                            <Tooltip content={<CustomTooltip/>}/>
+                            <Bar
+                                dataKey="orange"
+                                fill="url(#orangeGradient)"
+                                radius={[4, 4, 0, 0]}
+                                filter="url(#orangeGlow)"
+                            />
+                            <Bar
+                                dataKey="purple"
+                                fill="url(#purpleGradient)"
+                                radius={[4, 4, 0, 0]}
+                                filter="url(#purpleGlow)"
+                            />
+                            <Bar
+                                dataKey="teal"
+                                fill="url(#tealGradient)"
+                                radius={[4, 4, 0, 0]}
+                                filter="url(#tealGlow)"
+                            />
+                        </BarChart>
+                    </ResponsiveContainer>
+                </div>
             </div>
         </div>
+
     )
 }

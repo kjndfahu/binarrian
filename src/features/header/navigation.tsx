@@ -2,6 +2,7 @@ const navBtns = ['Buy Crypto', 'Markets', 'Exchange', 'FAQ', 'NFT']
 
 export function Navigation() {
   return (
+
       <div
           className="lg:flex hidden flex-row backdrop-blur-2xl px-6 items-center justify-between xl:w-[444px] w-[380px] h-[44px] rounded-full nav-border nav-bg">
         <div

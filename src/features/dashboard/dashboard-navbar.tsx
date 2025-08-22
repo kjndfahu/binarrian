@@ -35,7 +35,7 @@ export function DashboardNavbar() {
     };
 
     return (
-        <div className="flex flex-col relative min-h-screen items-center justify-between px-7 pt-8 pb-16 gap-18">
+        <div className="md:flex hidden flex-col relative min-h-screen items-center justify-between px-7 pt-8 pb-16 gap-18">
             <img className="cursor-pointer" src="/img/binnarian-logo.svg" alt="logo"/>
             <img
                 className="inset-0 w-full absolute top-0 z-[3] pointer-events-none select-none"

@@ -1,6 +1,7 @@
 "use client"
 
 import {useState} from "react";
+import {TransactionsBarAdaptive} from "@/features/dashboard/transactions/transactions-bar-adaptive.tsx";
 
 const transactions = [
     {
@@ -90,13 +91,13 @@ export function TransactionsPage() {
 
     return (
         <div
-            style={{maxHeight: 'calc(100% - 161px)'}}
-            className="relative rounded-[14px] overflow-x-auto lg:overflow-x-hidden  mx-9 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
+            style={{maxHeight: 'calc(100% - 161px)', scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent'}}
+            className="relative rounded-[14px] overflow-x-auto lg:overflow-x-hidden lg:mx-8 md:mx-5 mx-4 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
             <div
-                className="flex flex-col relative bg-[#070322] h-full rounded-[12px]">
-                <div className="flex items-center justify-between pt-4 px-[26px] flex-shrink-0">
-                    <h3 className="text-[20px] text-white leading-[24px] font-bold">History Transactions</h3>
-                    <div className="flex gap-4 items-center">
+                className="flex flex-col relative min-w-fit bg-[#070322] h-full rounded-[12px]">
+                <div className="flex items-center justify-between pt-6 md:px-[26px] px-[17px] flex-shrink-0">
+                    <h3 className="md:text-[20px] text-[18px] text-white leading-[24px] font-bold">History Transactions</h3>
+                    <div className="md:flex hidden gap-4 items-center">
                         <div onClick={() => setTab('all')}
                              className={`text-[16px] ${tab === 'all' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>All
                         </div>
@@ -107,6 +108,7 @@ export function TransactionsPage() {
                              className={`text-[16px] ${tab === 'deposit' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Deposit
                         </div>
                     </div>
+                    <TransactionsBarAdaptive/>
                 </div>
 
                 <div className="flex flex-col px-[26px] pt-6 flex-1 min-h-0 min-w-[800px] lg:min-w-0">
@@ -127,31 +129,33 @@ export function TransactionsPage() {
                     </div>
 
                     <div style={{scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent'}}
-                         className="flex-1 pr-[20px] overflow-y-auto min-h-0">
-                        {transactions.map((transaction, index) => (
-                            <div key={index} className="flex items-center py-4 border-b border-white/5">
-                                <div className="flex-1 flex items-center gap-3 min-w-0">
-                                    <img className="w-6 h-6 flex-shrink-0" src="/img/btc-icon.svg" alt="btc"/>
-                                    <span
-                                        className="lg:text-[16px] text-[14px] font-semibold text-white truncate">{transaction.type}</span>
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <span
-                                        className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.date}</span>
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <span className="lg:text-[16px] text-[14px] text-white truncate">{transaction.amount}</span>
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex flex-col gap-1 text-right">
+                         className="flex-1 overflow-y-auto min-h-0 pr-[20px] md:pr-0 md:pl-[20px] md:[direction:rtl]">
+                        <div className="md:[direction:ltr] ">
+                            {transactions.map((transaction, index) => (
+                                <div key={index} className="flex items-center py-4 border-b border-white/5">
+                                    <div className="flex-1 flex items-center gap-3 min-w-0">
+                                        <img className="w-6 h-6 flex-shrink-0" src="/img/btc-icon.svg" alt="btc"/>
                                         <span
-                                            className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.address}</span>
+                                            className="lg:text-[16px] text-[14px] font-semibold text-white truncate">{transaction.type}</span>
+                                    </div>
+                                    <div className="flex-1 min-w-0">
                                         <span
-                                            className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.txId}</span>
+                                            className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.date}</span>
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <span className="lg:text-[16px] text-[14px] text-white truncate">{transaction.amount}</span>
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex flex-col gap-1 text-right">
+                                            <span
+                                                className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.address}</span>
+                                            <span
+                                                className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.txId}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
 

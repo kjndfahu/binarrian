@@ -99,6 +99,16 @@
 
 }
 
+/* Скрытие скроллбара */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari и Opera */
+}
+
 .buy-crypto-border{
   border: 1.12px solid;
   border-image-source: linear-gradient(143.44deg, rgba(208, 220, 255, 0.28) -1.16%, rgba(208, 220, 255, 0.025) 65.11%);
@@ -244,4 +254,24 @@ input[type=number] {
 
 .soon-shadow{
   box-shadow: 0px 0px 1.59px 0px #DBC9FF inset;
+}
+
+.balance-withdraw{
+  background: linear-gradient(90deg, rgba(183, 121, 245, 0.3) 0%, rgba(133, 71, 246, 0.15) 100%);
+}
+
+.benefit-shadow{
+  box-shadow: 0px 1px 4px 0px #FFFFFF66 inset;
+  box-shadow: 0px -3px 3px 0px #FFFFFF1A inset;
+  box-shadow: 0px 2px 2px 0px #FFFFFF1A inset;
+  box-shadow: 0px 0px 0px 1px #FFFFFF33 inset;
+}
+
+.arrow-down-bg{
+  background: linear-gradient(180deg, #8547F6 0%, #DDCBFF 100%);
+}
+
+.tooltip-bg-balance{
+  background: linear-gradient(90deg, rgba(183, 121, 245, 0.2) 0%, rgba(133, 71, 246, 0.1) 100%);
+
 }

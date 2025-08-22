@@ -66,7 +66,7 @@ export function TrendAssets(){
     ];
 
     return (
-        <div className="flex flex-col items-center justify-center p-[80px] gap-12">
+        <div className="flex flex-col items-center justify-center 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 gap-12">
             <div className="flex flex-col items-center justify-center gap-4">
                 <div className="py-3 px-[22px] w-[166px] trend-assets-border text-normal text-center bg-[#FFFFFF1F] text-[20px] leading-[24px] text-white rounded-full">
                 Trend Assets

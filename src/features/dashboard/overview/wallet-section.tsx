@@ -1,6 +1,6 @@
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import {CurrencyBlock} from "@/features/dashboard/overview/currency-block.tsx";
 
-// Данные для диаграммы с эффектами свечения
 const data = [
     {
         name: 'BTC',
@@ -22,52 +22,78 @@ const data = [
     },
 ];
 
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
+    const RADIAN = Math.PI / 180;
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+        <></>
+    );
+};
+
+const CustomTooltip = ({ active, payload }: any) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="">
+            </div>
+        );
+    }
+    return null;
+};
+
 export function WalletSection(){
     return (
-        <div className="flex flex-col gap-8 mt-[14px]">
+        <div className="flex flex-col gap-8 ">
             <div className="flex items-center justify-between">
                 <h5 className="text-[20px] text-white leading-[24px] font-bold">Wallet</h5>
                 <p className="text-[16px] leading-[24px] text-[#CACACA]">3 Currencies</p>
             </div>
-            
-            <div className="w-full h-[300px] select-none" style={{ outline: 'none' }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <defs>
-                            {data.map((entry, index) => (
-                                <filter key={`glow-${index}`} id={`glow-${index}`}>
-                                    <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-                                    <feFlood floodColor={entry.glowColor} floodOpacity="0.8" result="glowColor"/>
-                                    <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
-                                    <feMerge>
-                                        <feMergeNode in="softGlow"/>
-                                        <feMergeNode in="SourceGraphic"/>
-                                    </feMerge>
-                                </filter>
-                            ))}
-                        </defs>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={97}
-                            paddingAngle={5}
-                            cornerRadius={5}
-                            dataKey="value"
-                        >
-                            {data.map((entry, index) => (
-                                <Cell
-                                    key={`cell-${index}`}
-                                    fill={entry.color}
-                                    filter={`url(#glow-${index})`}
-                                />
-                            ))}
-                        </Pie>
-                    </PieChart>
-                </ResponsiveContainer>
-            </div>
 
+            <div className="flex gap-5">
+                <div className="w-[163px] h-[163px] outline-0 ring-0 select-none relative" style={{outline: 'none'}}>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Pie
+                                data={data}
+                                cx="50%"
+                                cy="50%"
+                                innerRadius={65}
+                                outerRadius={80}
+                                paddingAngle={5}
+                                cornerRadius={3}
+                                dataKey="value"
+                                label={renderCustomizedLabel}
+                                labelLine={false}
+                            >
+                                {data.map((entry, index) => (
+                                    <Cell
+                                        key={`cell-${index}`}
+                                        fill={entry.color}
+                                        stroke={entry.color}
+                                        strokeWidth={2}
+                                    />
+                                ))}
+                            </Pie>
+                            <Tooltip content={<CustomTooltip />} />
+                        </PieChart>
+                    </ResponsiveContainer>
+
+                    <div className="absolute p-[3px] inset-0 left-[25px] top-[25px] tooltip-bg-balance rounded-full w-[113px] h-[113px] flex items-center justify-center pointer-events-none">
+                        <div className="flex aspect-square border-[2px] border-dashed w-full border-[#8144F6] rounded-full gap-1 items-center justify-center text-center">
+                            <img className="rotate-180" src="/img/arrow-green-down.svg" alt="arrow"/>
+                            <p className="text-white font-semibold text-[20px] leading-[27px]">2.31%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                    <CurrencyBlock/>
+                    <CurrencyBlock/>
+                    <CurrencyBlock/>
+                </div>
+            </div>
         </div>
     )
 }

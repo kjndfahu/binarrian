@@ -84,7 +84,7 @@ export function CryptoWalletTable(){
                     </div>
                 </div>
 
-                <div className="flex-1 h-full overflow-y-hidden">
+                <div style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }} className="flex-1 h-full overflow-y-auto">
                     {trendAssets.map((asset, index) => (
                         <div key={index}
                              className="flex items-center justify-between pr-8 py-6 border-b border-[#D0DCFF1F] hover:bg-[#FFFFFF05] transition-colors">

@@ -9,10 +9,10 @@ export function TokenListingPage() {
             <HomeHero
                 title="To the moon with Binarrian"
                 text="Get your trading volume to 1M+ USD with our Trading competition"
-                padding="pt-[100px]"
+                padding="lg:pt-[100px] md:pt-[40px]"
                 form={
                     <button
-                        className="text-[22px] cursor-pointer h-[65px] text-white font-bold rounded-full visit-btn w-[248px] send-shadow">
+                        className="lg:text-[22px] md:text-[18px] text-[14px] cursor-pointer lg:h-[65px] md:h-[54px] h-[48px] text-white lg:font-bold md:font-medium font-normal rounded-full visit-btn lg:w-[248px] md:w-[220px] w-[168px] send-shadow">
                         Apply to list
                     </button>
                 }/>

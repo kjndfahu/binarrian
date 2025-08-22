@@ -1,7 +1,7 @@
 export function ProfileInputs(){
     return (
-        <div className="flex flex-col gap-5 w-full">
-            <div className="flex items-center w-full gap-9">
+        <div className="flex flex-col gap-5 pb-6 w-full">
+            <div className="flex md:flex-row flex-col items-center w-full md:gap-9 gap-6">
 
                 <div className="flex flex-col w-full gap-4">
                     <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">First Name</label>
@@ -23,7 +23,7 @@ export function ProfileInputs(){
 
             </div>
 
-            <div className="flex items-center w-full gap-9">
+            <div className="flex md:flex-row flex-col items-center w-full md:gap-9 gap-6">
 
                 <div className="flex flex-col w-full gap-4">
                     <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">Email</label>
@@ -45,7 +45,7 @@ export function ProfileInputs(){
 
             </div>
 
-            <div className="flex items-center w-full gap-9">
+            <div className="flex md:flex-row flex-col items-center w-full md:gap-9 gap-6">
 
                 <div className="flex flex-col w-full gap-4">
                     <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">Email</label>
@@ -68,7 +68,7 @@ export function ProfileInputs(){
             </div>
 
             <button
-                className="text-[14px] w-[182px] h-[47px] mt-[4px] font-semibold cursor-pointer rounded-full text-white py-3 px-[18px] visit-btn">
+                className="text-[14px] md:w-[182px] w-full h-[47px] mt-[4px] font-semibold cursor-pointer rounded-full text-white py-3 px-[18px] visit-btn">
                 Save Changes
             </button>
         </div>

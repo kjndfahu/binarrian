@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
           return {
             element: (
               <>
-                <AppHeader top="top-[300px]"/>
+                <AppHeader top="2xl:top-[300px] xl:top-[400px] lg:top-[350px] sm:top-[500px] top-[550px]"/>
                 <HomePage />
                 <AppFooter />
               </>
@@ -144,7 +144,7 @@ export const router = createBrowserRouter([
                 return {
                     element: (
                         <>
-                            <AppHeader top="top-[80px]"/>
+                            <AppHeader top="2xl:top-[150px] xl:top-[250px] lg:top-[280px] top-[370px]"/>
                             <TokenListingPage />
                             <AppFooter />
                         </>

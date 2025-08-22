@@ -168,64 +168,63 @@ export function MarketTable(){
     ];
 
     return (
-        <div className="flex flex-col items-center justify-center pt-[170px] gap-12">
-            <div className="w-full rounded-[20px] backdrop-blur-lg border-[1px] border-[#D0DCFF8F] overflow-hidden">
-                <div className="flex items-center justify-between px-8 py-6 border-b border-[#D0DCFF2F]">
-                    <div className=" w-[50px]">
+        <div className="flex flex-col items-center justify-center lg:pt-[170px] md:pt-[120px] pt-16 gap-12">
+            <div className="w-full rounded-[20px] backdrop-blur-lg md:border-[1px] border-[#D0DCFF8F] overflow-hidden">
+                <div className="flex items-center justify-between xl:px-8 sm:px-4 md:py-6 py-2 border-b border-[#D0DCFF2F]">
+                    <div className="md:flex hidden xl:w-[50px] w-[27px]">
                         <span className="text-[19px] text-white">#</span>
                     </div>
-                    <div className="flex items-center gap-4 w-[300px]">
-                        <span className="text-[15px] text-white">Name</span>
+                    <div className="flex items-center gap-4 xl:w-[300px] sm:w-[180px] w-[150px]">
+                        <span className="md:text-[15px] text-[13px] md:text-white text-[#777E90]">Name</span>
                     </div>
-                    <div className="flex-1 ">
-                        <span className="text-[15px] text-white">Last Price</span>
+                    <div className="flex-1 md:text-start text-end">
+                        <span className="md:text-[15px] text-[13px] md:text-white text-[#777E90]">Last Price</span>
                     </div>
-                    <div className="flex-1 ">
+                    <div className="md:flex hidden flex-1 ">
                         <span className="text-[15px] text-white">24H Change</span>
                     </div>
-                    <div className="flex-1 ">
+                    <div className="md:flex hidden flex-1 ">
                         <span className="text-[15px] text-white">Low 24H</span>
                     </div>
-                    <div className="flex-1">
+                    <div className="md:flex hidden flex-1">
                         <span className="text-[15px] text-white">High 24H</span>
                     </div>
-                    <div className="flex-1">
-                        <span className="text-[15px] text-white">Volume 24H</span>
+                    <div className="flex-1 md:text-start text-end">
+                        <span className="md:text-[15px] text-[13px] md:text-white text-[#777E90]">Volume 24H</span>
                     </div>
                 </div>
 
-                {/* Scrollable Table Body */}
-                <div className="max-h-[400px] overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }}>
+                <div className="" style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }}>
                     {market.map((asset, index) => (
                         <div key={index}
-                             className="flex items-center justify-between px-8 py-6 border-b border-[#D0DCFF1F] hover:bg-[#FFFFFF05] transition-colors">
-                            <div className=" w-[50px]">
+                             className="flex items-center justify-between xl:px-8 sm:px-4 py-6 border-b border-[#D0DCFF1F] hover:bg-[#FFFFFF05] transition-colors">
+                            <div className="md:flex hidden xl:w-[50px] w-[27px]">
                                 <span className="text-[18px] font-semibold text-white">{index+1}</span>
                             </div>
-                            <div className="flex items-center gap-4 w-[300px]">
-                                <img className="w-[29px] h-[29px] pointer-events-none select-none" src={asset.icon}
+                            <div className="flex items-center gap-4 xl:w-[300px] sm:w-[180px] w-[150px]">
+                                <img className=" w-[29px] h-[29px] pointer-events-none select-none" src={asset.icon}
                                      alt="logo"/>
                                 <div className="flex items-center gap-3">
-                                    <span className="text-[17px] font-medium text-white">{asset.symbol}</span>
-                                    <span className="text-[17px] text-[#B9BDEA]">{asset.name}</span>
+                                    <span className="md:flex hidden xl:text-[17px] md:text-[15px] text-[13px] font-medium text-white">{asset.symbol}</span>
+                                    <span className="xl:text-[17px] md:text-[15px] text-[13px] text-[#B9BDEA]">{asset.name}</span>
                                 </div>
                             </div>
-                            <div className="flex-1">
-                                <span className="text-[17px] font-medium text-white">{asset.lastPrice}</span>
+                            <div className="flex-1 md:text-start text-end">
+                                <span className="xl:text-[17px] md:text-[15px] text-[13px] font-medium text-white">{asset.lastPrice}</span>
                             </div>
-                            <div className="flex-1 ">
-                                <span className={`text-[19px] ${asset.isPositive ? 'text-[#11CABE]' : 'text-[#FA2256]'}`}>
+                            <div className="flex-1 md:text-start text-end">
+                                <span className={`xl:text-[19px] md:text-[15px] text-[13px] ${asset.isPositive ? 'text-[#11CABE]' : 'text-[#FA2256]'}`}>
                                     {asset.change24}
                                 </span>
                             </div>
-                            <div className="flex-1">
-                                <span className="text-[17px] font-medium text-white">{asset.low24}</span>
+                            <div className="md:flex hidden flex-1">
+                                <span className="xl:text-[17px] md:text-[15px] text-[13px] font-medium text-white">{asset.low24}</span>
                             </div>
-                            <div className="flex-1">
-                                <span className="text-[17px] font-medium text-white">{asset.high24}</span>
+                            <div className="md:flex hidden flex-1">
+                                <span className="xl:text-[17px] md:text-[15px] text-[13px] font-medium text-white">{asset.high24}</span>
                             </div>
-                            <div className="flex-1">
-                                <span className="text-[17px] font-medium text-white">{asset.volume24}</span>
+                            <div className="md:flex hidden flex-1">
+                                <span className="xl:text-[17px] md:text-[15px] text-[13px] font-medium text-white">{asset.volume24}</span>
                             </div>
                         </div>
                     ))}

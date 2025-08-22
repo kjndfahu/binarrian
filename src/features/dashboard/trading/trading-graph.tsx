@@ -108,7 +108,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function TradingGraph(){
     return (
-        <div className="flex p-6 rounded-[12px] buy-crypto-bg border-[1px] border-[#D0DCFF8F] w-full gap-1 flex-col">
+        <div className="flex p-6 rounded-[12px] buy-crypto-bg border-[1px] border-[#D0DCFF8F] w-full gap-1 flex-col flex-1 min-h-0 overflow-hidden">
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-[22px]">
                     <h3 className="text-[25px] font-bold text-white leading-[30px]">BTC/ USD</h3>
@@ -142,7 +142,7 @@ export function TradingGraph(){
             </div>
             
             {/* График с использованием recharts */}
-            <div className="w-full h-[400px] select-none" style={{ outline: 'none' }}>
+            <div className="w-full flex-1 min-h-0 select-none" style={{ outline: 'none' }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <defs>

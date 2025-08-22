@@ -5,19 +5,19 @@ import {MarketTradesSection} from "@/features/dashboard/trading/market-trades-se
 import {TradingGraph} from "@/features/dashboard/trading/trading-graph.tsx";
 
 export function TradingPage() {
-    return (
-        <div className="flex px-8 gap-5 h-full min-h-screen max-h-screen">
-            <div className="flex flex-col h-full gap-6">
-                <BuyBlock/>
-                <ExchangeBlock/>
-            </div>
-            <div className="flex flex-col w-full gap-[25px]">
-                <CurrencyBlock/>
-                <TradingGraph/>
-                <MarketTradesSection/>
-            </div>
-        </div>
-    )
+	return (
+		<div className="flex px-8 gap-5 h-screen overflow-hidden py-[clamp(12px,2vh,32px)]">
+			<div className="flex flex-col gap-[clamp(16px,3vh,28px)] h-full">
+				<BuyBlock/>
+				<ExchangeBlock/>
+			</div>
+			<div className="flex flex-col w-full gap-[25px] h-full min-h-0">
+				<CurrencyBlock/>
+				<TradingGraph/>
+				<MarketTradesSection/>
+			</div>
+		</div>
+	)
 }
 
 export default TradingPage;
