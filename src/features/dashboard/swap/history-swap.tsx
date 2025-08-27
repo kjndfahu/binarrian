@@ -46,24 +46,7 @@ export function HistorySwap() {
                     <TransactionsBarAdaptive />
                 </div>
 
-                <div className="flex flex-col px-[26px] pt-6 flex-1 min-h-0 min-w-[800px] lg:min-w-0">
-                    <div className="flex items-center py-4 border-b border-white/10 flex-shrink-0">
-                        <div className="flex-1 min-w-0 xl:w-[120px] w-[60px]">
-                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">From</span>
-                        </div>
-                        <div className="flex-1 min-w-0 2xl:w-[300px] xl:w-[200px] w-[170px]">
-                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">From Details</span>
-                        </div>
-                        <div className="flex-1 min-w-0 xl:w-[100px] w-[60px]">
-                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">To</span>
-                        </div>
-                        <div className="flex-1 min-w-0 2xl:w-[300px] xl:w-[200px] w-[170px]">
-                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">To Details</span>
-                        </div>
-                        <div className="flex-1 min-w-0 text-right">
-                            <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Status</span>
-                        </div>
-                    </div>
+                <div className="flex flex-col px-[26px] pt-6 flex-1 min-h-0 lg:min-w-[800px] min-w-[500px] lg:min-w-0">
 
                     <div
                         style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }}
@@ -71,21 +54,21 @@ export function HistorySwap() {
                     >
                         {transactions.map((transaction, index) => (
                             <div key={index} className="flex items-center py-4 border-b border-white/5 md:direction-ltr">
-                                <div className="flex-1 min-w-0 xl:w-[120px] w-[60px]">
-                                    <span className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.fromSymbol}</span>
+                                <div className=" min-w-0 xl:w-[120px] w-[70px]">
+                                    <span className="lg:text-[16px] text-[14px] text-white font-normal truncate">From</span>
                                 </div>
-                                <div className="flex-1 min-w-0 2xl:w-[300px] xl:w-[200px] w-[170px] flex items-center gap-3">
+                                <div className="lg:flex-1 min-w-0 2xl:w-[300px] xl:w-[200px] lg:w-[170px] w-[100px] flex items-center gap-3">
                                     <img src={transaction.fromIcon} alt={transaction.fromSymbol} className="w-6 h-6 flex-shrink-0" />
                                     <span className="lg:text-[16px] text-[14px] font-semibold text-white truncate">{transaction.fromSymbol}</span>
-                                    <span className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.fromName}</span>
+                                    <span className="lg:flex hidden lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.fromName}</span>
                                 </div>
-                                <div className="flex-1 min-w-0 xl:w-[100px] w-[60px]">
-                                    <span className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.toSymbol}</span>
+                                <div className="lg:flex-1 text-center min-w-0 xl:w-[90px] w-[70px]">
+                                    <span className="lg:text-[16px] text-[14px] text-white font-normal truncate">To</span>
                                 </div>
-                                <div className="flex-1 min-w-0 2xl:w-[300px] xl:w-[200px] w-[170px] flex items-center gap-3">
+                                <div className="lg:flex-1 min-w-0 2xl:w-[300px] xl:w-[200px] lg:w-[170px] w-[100px] flex items-center gap-3">
                                     <img src={transaction.toIcon} alt={transaction.toSymbol} className="w-6 h-6 flex-shrink-0" />
                                     <span className="lg:text-[16px] text-[14px] font-semibold text-white truncate">{transaction.toSymbol}</span>
-                                    <span className="lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.toName}</span>
+                                    <span className="lg:flex hidden lg:text-[16px] text-[14px] text-white font-normal truncate">{transaction.toName}</span>
                                 </div>
                                 <div className="flex-1 min-w-0 text-right">
                                     <span className="lg:text-[16px] text-[14px] text-[#11CABE] font-normal truncate">{transaction.status}</span>

@@ -21,7 +21,7 @@ const routeConfig = {
     "swap": { Logo: Swap, title: 'Swap', link: ROUTES.SWAP },
     "transactions": { Logo: Transactions, title: 'Transactions', link: ROUTES.TRANSACTIONS },
     "referral-system": { Logo: ReferralSystem, title: 'Referral System', link: ROUTES.REFERRALSYSTEM },
-    "profile": { Logo: SettingsLogo, title: 'Settings', link: ROUTES.OVERVIEW },
+    "profile": { Logo: SettingsLogo, title: 'Settings', link: ROUTES.PROFILE },
     "default": { Logo: OverviewLogo, title: 'Overview', link: ROUTES.OVERVIEW },
 };
 
@@ -35,7 +35,7 @@ export function DashboardNavbar() {
     };
 
     return (
-        <div className="md:flex hidden flex-col relative min-h-screen items-center justify-between px-7 pt-8 pb-16 gap-18">
+        <div className="md:flex hidden fixed top-0 left-0 flex-col min-h-screen max-h-screen items-center justify-between px-7 pt-8 pb-16 gap-18 w-[80px]  z-10">
             <img className="cursor-pointer" src="/img/binnarian-logo.svg" alt="logo"/>
             <img
                 className="inset-0 w-full absolute top-0 z-[3] pointer-events-none select-none"

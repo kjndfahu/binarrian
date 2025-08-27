@@ -23,13 +23,16 @@ export function AppHeader({ top }: { top: string }) {
                     src="/img/points.avif"
                     alt="points"
                 />
-                <img
-                    className={`inset-0 w-full absolute ${top} z-[1] pointer-events-none select-none`}
-                    src="/img/arrow-down.png"
-                    alt="arrow-down"
-                />
+                {location.pathname !== "/trade" && (
+                    <img
+                        className={`inset-0 w-full absolute ${top} z-[1] pointer-events-none select-none`}
+                        src="/img/arrow-down.png"
+                        alt="arrow-down"
+                    />
+                )}
                 {location.pathname === "/" && (
-                    <div className={`flex items-center justify-center absolute 2xl:top-[600px] xl:top-[500px] lg:top-[350px] sm:top-[500px] top-[550px] left-[45%] z-[2] cursor-pointer w-[120px] h-[118px] arrow-down-bg rounded-full border-[1.5px] border-white`}>
+                    <div
+                        className={`flex items-center justify-center absolute 2xl:top-[600px] xl:top-[500px] lg:top-[350px] sm:top-[500px] top-[550px] left-[45%] z-[2] cursor-pointer w-[120px] h-[118px] arrow-down-bg rounded-full border-[1.5px] border-white`}>
                         <img src="/img/arrow-down-svg.svg" alt="arrow"/>
                     </div>
                 )}

@@ -11,7 +11,7 @@ export function CryptoWalletBlock({value, symbol, data, logo, number, isPositive
         <div
             className="relative rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
             <div
-                className="flex relative bg-[#070322] rounded-[12px] justify-between h-[221px] p-[22px] md:w-full w-[300px]">
+                className="flex relative bg-[#070322] rounded-[12px] justify-between h-[221px] p-[22px] lg:w-full w-[300px]">
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-4">
                         <img className="w-[24px] h-[24px]" src={logo} alt="btc"/>

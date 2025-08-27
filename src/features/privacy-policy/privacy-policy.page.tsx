@@ -1,14 +1,13 @@
 import {HomeHero} from "@/features/home/home-hero.tsx";
 import {IndiceSection} from "@/features/indices/indice-section.tsx";
-import {cookiesText} from "@/shared/model/texts.ts";
 
 export function PrivacyPolicyPage(){
     return (
-        <div className="flex flex-col px-[80px] relative overflow-y-hidden overflow-x-hidden gap-[100px]">
-            <HomeHero title="Privacy Policy" padding="pt-[100px]"/>
-            <img className="self-center pt-[200px]" src="/img/privacy.svg" alt="cookies"/>
+        <div className="flex flex-col sm:mb-0 mb-[100px] 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 relative overflow-y-hidden overflow-x-hidden gap-[100px]">
+            <HomeHero title="Privacy Policy" padding="2xl:pt-[100px] lg:pt-[90px] md:pt-0"/>
+            <img className="self-center xl:pt-[200px] sm:pt-[100px] pt-[50px]" src="/img/privacy-policy.svg" alt="cookies"/>
 
-           <div className="flex flex-col gap-9">
+           <div className="flex flex-col lg:gap-9 md:gap-16 sm:gap-20 gap-24">
                <IndiceSection title="General" text="Binarrian Financial Company and its affiliates (hereinafter, 'Binarrian Financial Company', 'Binarrian', 'we', 'us' or 'our') are committed to protecting and respecting your privacy. This Privacy Policy (together with our Terms of Use) governs our collection, processing and use of your Personal Information. We define 'Personal Information' as information which identifies you personally, e.g. your name, address, e-mail address, trades etc."/>
                <IndiceSection title="Who is Binarrian" text="Binarrian is Australia’s largest fully regulated and licensed AML/CTF compliant AUSTRAC registered Dual Gateway Exchange Platform. Buy, sell, send, receive and trade cryptocurrencies."/>
                <IndiceSection title="The types of Personal Information which we collect may include:" text="We will process your Personal Information only for the purpose(s) of providing to you the service(s) that you ask us to provide you and to satisfy the legal obligations stemming from regulatory obligations that arise from providing you the service(s)"/>

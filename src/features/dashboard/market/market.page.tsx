@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import {MarketBlock} from "@/features/dashboard/market/market-block.tsx";
+import {MarketTable} from "@/features/dashboard/market/market-table.tsx";
 
 export function MarketPage() {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -25,8 +26,8 @@ export function MarketPage() {
     };
 
     return (
-        <div className="flex flex-col gap-8 w-full">
-            <div className="flex flex-col gap-6 lg:pl-8 md:pl-5 pl-4">
+        <div className="flex flex-col gap-6 overflow-hidden">
+            <div className="flex flex-col gap-6 lg:pr-8 md:pr-5 lg:pl-8 md:pl-5 pl-4">
                 <div className="hidden md:grid xl:grid-cols-4 grid-cols-2 gap-6">
                     {marketBlocks.map((block, index) => (
                         <MarketBlock
@@ -75,7 +76,11 @@ export function MarketPage() {
                 </div>
             </div>
 
-            {/*<MarketTable/>*/}
+            <div className="lg:px-8 md:px-5 px-4 overflow-hidden">
+                <div style={{ height: 'calc(100vh - 305px)', overflowY: 'auto' }}>
+                    <MarketTable />
+                </div>
+            </div>
         </div>
     )
 }

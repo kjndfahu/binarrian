@@ -6,11 +6,11 @@ import {TextBlock} from "@/features/bug-bounty/text-block.tsx";
 export function BugBountyPage(){
 
     return (
-        <div className="flex flex-col relative pb-[160px] overflow-x-hidden overflow-y-hidden px-20 gap-[100px]">
-            <HomeHero title="Bug Bounty Program" padding="pt-[100px]"/>
-            <img className="self-center pt-[70px]" src="/img/bug-bounty.png" alt="bug"/>
+        <div className="flex flex-col relative pb-[160px] overflow-x-hidden overflow-y-hidden 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 gap-[100px]">
+            <HomeHero title="Bug Bounty Program" padding="2xl:pt-[100px] lg:pt-[90px] md:pt-0"/>
+            <img className="self-center lg:pt-[70px] md:pt-16" src="/img/bug-bounty.svg" alt="bug"/>
 
-            <div className="flex flex-col gap-9">
+            <div className="flex flex-col lg:gap-9 md:gap-16 sm:gap-20 gap-24">
                 <IndiceSection text="The safety of our users’ funds and personal data is our main priority, therefore, the security of our platform and services is the field we work on daily and implement a number of advanced security technologies. Nevertheless, the contribution of the security researchers, who assist us in keeping our products and users safe, is extremely important for us, that is why we launched a vulnerability detection bounty program. The terms and conditions of our bug bounty program are described in this Bug Bounty Policy."/>
                 <TextBlock title="Ineligibility" text="Vulnerabilities found in out of scope resources are unlikely to be rewarded unless they present a serious business risk (at our sole discretion). In general, the following vulnerabilities do not correspond to the severity threshold:"/>
                 <IndiceSection title="WEB" text={vulnerabilitiesText} className="whitespace-pre-line"/>

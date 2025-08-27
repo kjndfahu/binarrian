@@ -4,9 +4,9 @@ import {regulatoryLicense} from "@/shared/model/texts.ts";
 
 export function RegulatoryLicensePage() {
     return (
-        <div className="flex flex-col px-[80px] relative overflow-y-hidden overflow-x-hidden gap-[100px]">
+        <div className="flex flex-col sm:mb-0 mb-[100px] 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 relative overflow-y-hidden overflow-x-hidden gap-[100px]">
             <HomeHero title="Regulatory License" padding="2xl:pt-[100px] lg:pt-[90px] md:pt-0"/>
-            <img className="self-center pt-[100px]" src="/img/refulatory.svg" alt="cookies"/>
+            <img className="self-center lg:pt-[100px]" src="/img/refulatory.svg" alt="cookies"/>
 
             <IndiceSection text={regulatoryLicense} className="whitespace-pre-line"/>
 

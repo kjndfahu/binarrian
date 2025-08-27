@@ -16,7 +16,7 @@ export const routeConfig = {
     "trading": { Logo: TradingLogo, title: 'Trading' },
     "crypto-wallet": { Logo: Wallet, title: 'Crypto Wallet' },
     "market": { Logo: Market, title: 'Market' },
-    "stacking": { Logo: Stacking, title: 'Stacking' },
+    "stacking": { Logo: Stacking, title: 'Staking' },
     "swap": { Logo: Swap, title: 'Swap' },
     "transactions": { Logo: Transactions, title: 'Transactions' },
     "referral-system": { Logo: ReferralSystem, title: 'Referral System' },

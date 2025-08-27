@@ -4,7 +4,7 @@ import { Text } from "./text";
 
 export function AboutUsPage(){
     return (
-        <div className="flex flex-col relative overflow-x-hidden gap-[100px]">
+        <div className="flex flex-col sm:mb-0 mb-[100px] relative overflow-x-hidden gap-[100px]">
             <HomeHero title="About Us" padding="lg:pt-[100px] "/>
             <img className="self-center pt-[50px]" src="/img/about-us.svg" alt="about-us" />
             <div className="flex flex-col 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 lg:gap-[35px] sm:gap-[65px] gap-[96px]">

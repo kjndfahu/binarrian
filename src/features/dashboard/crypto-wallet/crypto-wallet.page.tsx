@@ -27,9 +27,9 @@ export function CryptoWalletPage() {
     };
 
     return (
-        <div className="flex overflow-y-hidden flex-col h-full 2xl:gap-6 gap-2 lg:px-8 md:px-5 px-4">
+        <div className="flex flex-col h-full 2xl:gap-6 lg:gap-2 gap-6">
             <div className="flex flex-col gap-6">
-                <div className="hidden md:grid grid-cols-4 2xl:gap-6 gap-2">
+                <div className="hidden lg:grid grid-cols-4 2xl:gap-6 gap-2 lg:px-0 md:px-5 px-4">
                     {cryptoBlocks.map((block, index) => (
                         <CryptoWalletBlock 
                             key={index}
@@ -44,7 +44,7 @@ export function CryptoWalletPage() {
                     ))}
                 </div>
 
-                <div className="md:hidden flex flex-col gap-6">
+                <div className="lg:hidden flex flex-col gap-6 md:pl-5 pl-4">
                     <div 
                         ref={scrollContainerRef}
                         className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide"
@@ -80,7 +80,7 @@ export function CryptoWalletPage() {
                 </div>
             </div>
             
-            <div className="flex w-full 2xl:gap-6 gap-2">
+            <div className="flex lg:flex-row lg:pb-0 pb-[27px] flex-col w-full 2xl:gap-6 gap-2 lg:px-0 md:px-5 px-4">
                 <WalletSection/>
                 <CryptoWalletTable/>
             </div>

@@ -7,7 +7,7 @@ export function OverviewPage() {
     return (
         <div className="flex px-8 gap-[27px] overflow-y-hidden h-full pb-8">
             <BalanceBlock/>
-            <div className="flex flex-1 flex-col gap-6 ">
+            <div className="flex flex-1 flex-col h-full gap-6 ">
                 <OverallGrowth/>
                 <div className="flex gap-[26px]">
                     <TopAssetsSection/>

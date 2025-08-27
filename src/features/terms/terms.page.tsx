@@ -11,11 +11,11 @@ import {Text} from "@/features/about-us/text.tsx";
 
 export function TermsPage() {
     return (
-        <div className="flex flex-col px-[80px] relative overflow-y-hidden overflow-x-hidden gap-[100px]">
-            <HomeHero title="Cookies Policy" padding="pt-[100px]"/>
-            <img className="self-center pt-[200px]" src="/img/terms.svg" alt="cookies"/>
+        <div className="flex flex-col sm:mb-0 mb-[100px] 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 relative overflow-y-hidden overflow-x-hidden gap-[100px]">
+            <HomeHero title="Cookies Policy" padding="lg:pt-[100px] md:pt-[40px] pt-[25px]"/>
+            <img className="self-center xl:pt-[200px] sm:pt-[100px] pt-[50px]" src="/img/terms.svg" alt="cookies"/>
 
-            <div className="flex flex-col gap-9">
+            <div className="flex flex-col lg:gap-9 md:gap-16 sm:gap-20 gap-24">
                 <Text title="1. TERMS OF USE" text={termsOfUse}/>
                 <Text title="2. RISK WARNING" text={riskWarning}/>
                 <Text title="3. REGISTRATION AND ACCOUNT OBLIGATIONS" text={registrationObligations}/>

@@ -273,5 +273,8 @@ input[type=number] {
 
 .tooltip-bg-balance{
   background: linear-gradient(90deg, rgba(183, 121, 245, 0.2) 0%, rgba(133, 71, 246, 0.1) 100%);
+}
 
+.MuiGauge-valueText {
+  color: rgba(255, 255, 255, 1);
 }

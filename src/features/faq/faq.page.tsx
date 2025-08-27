@@ -8,11 +8,13 @@ export function FAQPage() {
                 padding="2xl:pt-[80px] lg:pt-[40px]"
                 title="F.A.Q"
                 text="If you still have any questions left, here’s our F.A.Q for you! We combined the most popular questions to our support team in one page."/>
-            <FaqList/>
-            <img className="absolute top-[850px] left-0" src="/img/elipse-light-about.png" alt="light" />
-            <img style={{ transform: "scaleX(-1)" }} className="absolute top-[850px] right-0" src="/img/elipse-light-about.png" alt="light" />
+            <div className="relative z-10">
+                <FaqList/>
+            </div>
+            <img className="absolute top-[850px] left-0 z-0" src="/img/elipse-light-about.png" alt="light" />
+            <img style={{ transform: "scaleX(-1)" }} className="absolute top-[850px] right-0 z-0" src="/img/elipse-light-about.png" alt="light" />
         </div>
     );
 }
 
-export default FAQPage; 
+export default FAQPage;

@@ -1,8 +1,8 @@
 export function ExchangeBlock(){
 	return (
-		<div className="flex flex-col gap-[clamp(12px,2vh,20px)] p-[clamp(16px,2vh,24px)] pb-[clamp(12px,2vh,16px)] rounded-[12px] border-[1px] border-[#D0DCFF8F] w-[320px] flex-1 min-h-0 overflow-hidden">
+		<div className="flex flex-col gap-6 p-6 rounded-[12px] border-[1px] border-[#D0DCFF8F] w-[320px]">
 			<div className="flex items-center justify-between">
-				<h3 className="text-[clamp(16px,2.2vh,20px)] font-bold text-white leading-[24px]">Exchange</h3>
+				<h3 className="text-[20px] font-bold text-white leading-[24px]">Exchange</h3>
 				<img className="w-[24px] h-[24px]" src="/img/exchange.svg" alt="icon"/>
 			</div>
 			<div className="flex items-center justify-between">
@@ -45,7 +45,7 @@ export function ExchangeBlock(){
 
 			</div>
 			<button
-				className="text-[clamp(14px,2vh,16px)] mt-1 w-full h-[clamp(44px,6vh,58px)] mt-[4px] font-semibold cursor-pointer rounded-full text-white py-[clamp(10px,1.6vh,14px)] px-[clamp(16px,2vh,24px)] visit-btn">
+				className="text-[14px] mt-1 w-full h-[58px] mt-[4px] font-semibold cursor-pointer rounded-full text-white py-3 px-[18px] visit-btn">
 				Exchange
 			</button>
 		</div>

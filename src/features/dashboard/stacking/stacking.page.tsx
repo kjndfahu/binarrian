@@ -27,7 +27,7 @@ export function StackingPage() {
     };
 
     return (
-        <div className="flex flex-col gap-8 w-full gap-8">
+        <div className="flex flex-col overflow-y-hidden gap-8 w-full">
             <div className="flex flex-col gap-6">
                 <div className="hidden md:grid xl:grid-cols-4 grid-cols-2 lg:px-8 md:px-5 px-4 gap-6">
                     {stackingBlocks.map((block, index) => (
@@ -73,7 +73,7 @@ export function StackingPage() {
                 </div>
             </div>
             
-            <div className="flex md:flex-row flex-col items-start lg:px-8 md:px-5 px-4 h-full gap-6">
+            <div style={{ height: 'calc(100vh - 318px)'}} className="flex lg:pb-0 pb-6 lg:flex-row flex-col items-start lg:px-8 md:px-5 px-4 h-full gap-6">
                 <StakeBlock/>
                 <StakingTable/>
             </div>

@@ -13,30 +13,31 @@ export function FaqBlock({title, text}:{title: string, text:string}){
                 <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="flex items-center justify-center flex-shrink-0 min-w-[24px] min-h-[24px]"
                 >
                     {isOpen ? (
-                        <img className="pointer-events-none select-none" src="/img/minus.svg" alt="minus" />
+                        <img className="pointer-events-none select-none !w-[24px] !h-[24px] flex-shrink-0" src="/img/minus.svg" alt="minus" />
                     ) : (
-                        <img className="pointer-events-none select-none" src="/img/plus.svg" alt="plus" />
+                        <img className="pointer-events-none select-none !w-[24px] !h-[24px] flex-shrink-0" src="/img/plus.svg" alt="plus" />
                     )}
                 </motion.div>
             </div>
-            
+
             <AnimatePresence>
                 {isOpen && (
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
                         animate={{ opacity: 1, height: "auto", marginTop: 6 }}
                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                        transition={{ 
-                            duration: 0.3, 
+                        transition={{
+                            duration: 0.3,
                             ease: "easeInOut",
                             opacity: { duration: 0.2 }
                         }}
                         className="lg:text-[20px] text-[16px] lg:leading-[36px] leading-[32px] text-white overflow-hidden"
                     >
                         {text}
-                    </motion.p>   
+                    </motion.p>
                 )}
             </AnimatePresence>
         </div>

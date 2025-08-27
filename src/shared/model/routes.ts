@@ -26,5 +26,6 @@ export const ROUTES = {
   STACKING: "/stacking",
   SWAP: "/swap",
   MARKET: "/market",
-  TRADING: "/trading"
+  TRADING: "/trading",
+  TRADE: "/trade"
 } as const;

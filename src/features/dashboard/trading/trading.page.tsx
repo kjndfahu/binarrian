@@ -7,11 +7,11 @@ import {TradingGraph} from "@/features/dashboard/trading/trading-graph.tsx";
 export function TradingPage() {
 	return (
 		<div className="flex px-8 gap-5 h-screen overflow-hidden py-[clamp(12px,2vh,32px)]">
-			<div className="flex flex-col gap-[clamp(16px,3vh,28px)] h-full">
+			<div className="flex flex-col gap-6 h-full">
 				<BuyBlock/>
 				<ExchangeBlock/>
 			</div>
-			<div className="flex flex-col w-full gap-[25px] h-full min-h-0">
+			<div className="flex flex-col w-full gap-[25px] min-h-0">
 				<CurrencyBlock/>
 				<TradingGraph/>
 				<MarketTradesSection/>

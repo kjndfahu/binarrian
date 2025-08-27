@@ -6,7 +6,7 @@ export function BalanceBlock() {
     return (
         <div
             className="relative h-full w-[408px] rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
-            <div className="flex flex-col h-full justify-between p-6 rounded-[12px] bg-[#070322] w-[408px]">
+            <div className="flex flex-col h-full justify-between p-6 rounded-[12px] bg-[#070322]">
                 <div className="flex items-center justify-between">
                     <h3 className="text-[20px] font-bold text-white leading-[24px]">Balance</h3>
                     <div className="flex items-center gap-2">
@@ -20,6 +20,5 @@ export function BalanceBlock() {
                 <ExchangeBlock/>
             </div>
         </div>
-
     )
 }
