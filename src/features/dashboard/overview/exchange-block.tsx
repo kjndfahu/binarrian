@@ -8,7 +8,7 @@ export function ExchangeBlock(){
             <div className="flex flex-col gap-4">
                 <div className="flex border-b-[1px] border-[#34384C] py-[14px]">
                     <input placeholder="100"
-                           className="text-[18px] leading-[27px] flex-1 outline-0 ring-0 placeholder:text-white text-white"
+                           className="text-[18px] w-full leading-[27px] flex-1 outline-0 ring-0 placeholder:text-white text-white"
                            type="text"/>
                     <div className="flex items-center cursor-pointer gap-4 border-l-[1px] border-[#34384C] pl-4">
                         <img className="w-6 h-6" src="/img/eth-icon.svg" alt="icon"/>
@@ -19,7 +19,7 @@ export function ExchangeBlock(){
 
                 <div className="flex border-b-[1px] border-[#34384C] py-[14px]">
                     <input placeholder="0.074153"
-                           className="text-[18px] leading-[27px] flex-1 outline-0 ring-0 placeholder:text-white text-white"
+                           className="text-[18px] w-full leading-[27px] flex-1 outline-0 ring-0 placeholder:text-white text-white"
                            type="text"/>
                     <div className="flex items-center cursor-pointer gap-4 border-l-[1px] border-[#34384C] pl-4">
                         <img className="w-6 h-6" src="/img/btc-icon.svg" alt="icon"/>

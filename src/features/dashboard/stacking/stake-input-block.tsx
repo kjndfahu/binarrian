@@ -18,7 +18,7 @@ export function StakeInputBlock({firstText, secText, firstLogo, secLogo}:{firstT
             <div
                 className="flex w-full gap-[15px] border-b-[1px] border-[#34384C] py-[14px] items-center justify-between">
                 <input placeholder="0.05"
-                       className=" text-[17px] outline-0 ring-0 placeholder:text-white text-white leading-[25px]"
+                       className="text-[17px] w-full outline-0 ring-0 placeholder:text-white text-white leading-[25px]"
                        type="number"/>
                 <div className="flex items-center text-white gap-[7px]">
                     <h5 className="text-[16px] leading-[27px] font-semibold">0.1</h5>

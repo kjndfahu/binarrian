@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
                     return {
                         element: (
                             <>
-                                <AppHeader top="2xl:top-[300px] xl:top-[250px] lg:top-[290px] sm:top-[500px] top-[550px]"/>
+                                <AppHeader top="2xl:top-[200px] xl:top-[250px] lg:top-[290px] sm:top-[500px] top-[550px]"/>
                                 <BuyCryptoPage />
                                 <AppFooter />
                             </>

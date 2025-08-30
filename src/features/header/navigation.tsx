@@ -1,5 +1,3 @@
-const navBtns = ['Buy Crypto', 'Markets', 'Exchange', 'FAQ', 'NFT']
-
 export function Navigation() {
   return (
 

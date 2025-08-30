@@ -1,7 +1,7 @@
 export function NotificationBlock(){
     return (
         <div
-            className="absolute z-[1000] right-[150px] md:top-[120px] top-[90px] flex flex-col gap-6 md:w-[375px] w-[270px] border-[1px] border-[#D0DCFF8F] backdrop-blur-2xl rounded-[20px] md:pt-12 pt-6 md:p-7 p-4 buy-crypto-bg">
+            className="absolute z-[1000] right-[50px] md:top-[120px] top-[90px] flex flex-col gap-6 md:w-[375px] w-[270px] border-[1px] border-[#D0DCFF8F] backdrop-blur-2xl rounded-[20px] md:pt-12 pt-6 md:p-7 p-4 buy-crypto-bg">
             <div className="flex items-start notify-shadow md:gap-[30px] gap-4 pt-8 pb-5 relative">
                 <img src="/img/purple-tick.svg" alt="purple-tick"/>
                 <div className="flex flex-col gap-2">

@@ -1,30 +1,38 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react";
+import {useState, useEffect, useRef} from "react";
 import { motion } from "framer-motion";
-import { NotificationBlock } from "@/features/dashboard/header/notification-block.tsx";
 
-export function SearchBar() {
-    const [isOpen, setIsOpen] = useState(false);
+interface SearchBarProps {
+    isNotificationOpen: boolean;
+    setIsNotificationOpen: (isOpen: boolean) => void;
+    notificationRef: React.RefObject<HTMLDivElement>;
+}
+
+export function SearchBar({ isNotificationOpen, setIsNotificationOpen, notificationRef }: SearchBarProps) {
     const [isInputFocused, setIsInputFocused] = useState(false);
-    const notificationRef = useRef<HTMLDivElement>(null);
+    const bellRef = useRef<HTMLImageElement>(null);
 
-    // Handle clicks outside the NotificationBlock
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
-                setIsOpen(false);
+            if (
+                notificationRef.current &&
+                !notificationRef.current.contains(event.target as Node) &&
+                bellRef.current &&
+                !bellRef.current.contains(event.target as Node)
+            ) {
+                setIsNotificationOpen(false);
             }
         };
 
-        if (isOpen) {
+        if (isNotificationOpen) {
             document.addEventListener("mousedown", handleClickOutside);
         }
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen]);
+    }, [isNotificationOpen, setIsNotificationOpen, notificationRef]);
 
     return (
         <div className="flex justify-end w-full items-center md:gap-6 gap-4">
@@ -45,24 +53,17 @@ export function SearchBar() {
             <img className="md:hidden flex cursor-pointer" src="/img/search-logo.svg" alt="search" />
             <div className="flex items-center justify-center relative w-[25px] h-[25px]">
                 <img
-                    onClick={() => setIsOpen(!isOpen)}
+                    ref={bellRef}
+                    onClick={(event) => {
+                        event.stopPropagation();
+                        setIsNotificationOpen(!isNotificationOpen);
+                    }}
                     className="cursor-pointer"
                     src="/img/bell.svg"
                     alt="bell"
                 />
                 <div className="absolute top-[1px] right-[3px] w-[8px] h-[8px] rounded-full bg-[#8547F6]"></div>
             </div>
-            {isOpen && (
-                <motion.div
-                    ref={notificationRef}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
-                >
-                    <NotificationBlock />
-                </motion.div>
-            )}
         </div>
     );
 }

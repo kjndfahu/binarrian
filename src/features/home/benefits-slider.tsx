@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BenefitBlock } from "./benefit-block";
+import React from "react";
 
 const benefitInfo = [
     {
@@ -35,11 +36,30 @@ const benefitInfo = [
 ];
 
 export function BenefitsSlider() {
-    const totalSlides = Math.ceil(benefitInfo.length / 2);
+    const getBlocksPerSlide = () => {
+        return window.innerWidth < 768 ? 1 : 2;
+    };
+
+    const [blocksPerSlide, setBlocksPerSlide] = useState(getBlocksPerSlide());
+    const totalSlides = Math.ceil(benefitInfo.length / blocksPerSlide);
     const centerSlide = Math.floor(totalSlides / 2);
     const [currentSlide, setCurrentSlide] = useState(centerSlide);
-    const startIndex = currentSlide * 2;
-    const visibleBlocks = benefitInfo.slice(startIndex, startIndex + 2);
+    const startIndex = currentSlide * blocksPerSlide;
+    const visibleBlocks = benefitInfo.slice(startIndex, startIndex + blocksPerSlide);
+
+    const updateBlocksPerSlide = () => {
+        const newBlocksPerSlide = getBlocksPerSlide();
+        if (newBlocksPerSlide !== blocksPerSlide) {
+            setBlocksPerSlide(newBlocksPerSlide);
+            const newTotalSlides = Math.ceil(benefitInfo.length / newBlocksPerSlide);
+            setCurrentSlide(Math.min(currentSlide, newTotalSlides - 1));
+        }
+    };
+
+    React.useEffect(() => {
+        window.addEventListener('resize', updateBlocksPerSlide);
+        return () => window.removeEventListener('resize', updateBlocksPerSlide);
+    }, [blocksPerSlide]);
 
     const goToSlide = (slideIndex: number) => {
         setCurrentSlide(slideIndex);
@@ -48,7 +68,7 @@ export function BenefitsSlider() {
     return (
         <div className="flex relative flex-col items-center w-full">
 
-            <div className="flex mt-15 w-full z-[2] items-center gap-7 px-20 overflow-hidden">
+            <div className="flex md:mt-15 mt-6 w-full z-[2] items-center gap-7 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 overflow-hidden">
                 {visibleBlocks.map((item, index) => (
                     <BenefitBlock
                         key={startIndex + index}
@@ -59,14 +79,14 @@ export function BenefitsSlider() {
                 ))}
             </div>
 
-            <div className="flex items-center gap-3 mt-[100px]">
+            <div className="flex items-center sm:gap-3 gap-1 md:mt-[100px] mt-12">
                 {Array.from({ length: totalSlides }, (_, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
                         className={`h-[5px] rounded-full cursor-pointer transition-all duration-300 ${
                             index === currentSlide 
-                                ? 'bg-white w-[188px]' 
+                                ? 'bg-white sm:w-[188px] w-[100px]' 
                                 : 'bg-gray-600 w-10'
                         }`}
                     />

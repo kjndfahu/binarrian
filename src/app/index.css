@@ -282,3 +282,12 @@ input[type=number] {
 .join-bg{
   background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, #140F2A 45deg, rgba(100, 67, 194, 0) 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
 }
+
+.shadow-community{
+  backdrop-filter: blur(731.3585205078125px)
+}
+
+.how-it-works-bg{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+  conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}
