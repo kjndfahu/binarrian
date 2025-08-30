@@ -8,7 +8,7 @@ export function RecoveryPassForm(){
                 registration<br/> on our platform below.</p>
             <RecoveryPassInput/>
             <button
-                className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] w-[335px]">
+                className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] sm:w-[335px] w-full">
                 Continue
                 <img src="/img/arrow-right.svg" alt="arrow"/>
             </button>

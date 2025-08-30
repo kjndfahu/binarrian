@@ -6,7 +6,7 @@ export function NewPasswordForm(){
             <h2 className="text-[48px] text-left about-text leading-11">New<br/> password</h2>
             <NewPasswordInputs/>
             <button
-                className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] w-[335px]">
+                className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] sm:w-[335px] w-full">
                 Continue
                 <img src="/img/arrow-right.svg" alt="arrow"/>
             </button>

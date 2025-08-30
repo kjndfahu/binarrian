@@ -1,5 +1,6 @@
 import { HomeHero } from "./home-hero";
 import { HowItWorks } from "./how-it-works";
+import { JoinCommunity } from "./join-community";
 import { OurBenefits } from "./our-benefits";
 import { ProjectInfo } from "./project-info";
 import { TrendAssets } from "./trend-assets";
@@ -19,10 +20,11 @@ export function HomePage() {
             </div>
       }/>
       <ProjectInfo/>
-      {/*<HowItWorks/>*/}
+      <HowItWorks/>
       <OurBenefits/>
       <TrendAssets/>
-        <PlatformInfo/>
+      <JoinCommunity/>
+      <PlatformInfo/>
     </div>
   );
 }

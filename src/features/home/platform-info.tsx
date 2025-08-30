@@ -1,35 +1,54 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PlatformSection } from "@/features/home/platform-section.tsx";
 
 const platformSlides = [
     {
-        title: "Dashboard",
-        text: "Buy and sell cryptocurrencies all in one place with ease. The intuitive dashboard puts you in full control of your transactions. Track your portfolio and market trends without switching platforms.",
+        title: "Protection",
+        text: "Our platform offers industry-leading security to safeguard your assets. Advanced encryption and multi-layer authentication keep your data protected. We prioritize your safety, with every transaction.",
         img: "/img/protection-img.svg",
         imgStyle: "self-center"
     },
     {
-        title: "Trading Tools",
-        text: "Advanced trading tools and real-time market data to help you make informed decisions. Access professional charts, indicators, and analysis tools designed for both beginners and experienced traders.",
-        img: "/img/trading-tools.svg",
+        title: "Dashboard",
+        text: "Buy and sell cryptocurrencies all in one place with ease. The intuitive dashboard puts you in full control of your transactions. Track your portfolio and market trends without switching platforms.",
+        img: "/img/dashboard-img.svg",
         imgStyle: "self-center"
     },
     {
-        title: "Security",
-        text: "Enterprise-grade security with multi-layer protection. Your assets are secured with cold storage, two-factor authentication, and advanced encryption protocols to ensure maximum safety.",
-        img: "/img/security-img.svg",
+        title: "Device Support",
+        text: "Access your account from any device—mobile, tablet, or desktop. The platform is optimized for a seamless experience across all screen sizes. Stay connected and in control of your crypto wherever you are.",
+        img: "/img/device-support.svg",
         imgStyle: "self-center"
     }
 ];
 
 export function PlatformInfo(){
-    const [currentSlide, setCurrentSlide] = useState(1); // Начинаем с центрального слайда
+    const [currentSlide, setCurrentSlide] = useState(1); 
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const [sideWidth, setSideWidth] = useState(210);
+
+    const CENTER_WIDTH = 700;
+    const GAP_BETWEEN = 20; // gap-5 => 20px
 
     const goToSlide = (slideIndex: number) => {
         setCurrentSlide(slideIndex);
     };
 
-    // Получаем индексы для левого, центрального и правого слайдов
+    const recalcWidths = () => {
+        const containerWidth = containerRef.current?.offsetWidth || window.innerWidth;
+        const visibleWidth = Math.max(0, containerWidth - CENTER_WIDTH - GAP_BETWEEN * 2);
+        const newSideWidth = Math.floor(visibleWidth / 2);
+        setSideWidth(newSideWidth);
+    };
+
+    useEffect(() => {
+        recalcWidths();
+        const onResize = () => recalcWidths();
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
+
+    
     const getSlideIndices = () => {
         const leftIndex = currentSlide === 0 ? 2 : currentSlide - 1;
         const centerIndex = currentSlide;
@@ -40,26 +59,30 @@ export function PlatformInfo(){
 
     const { leftIndex, centerIndex, rightIndex } = getSlideIndices();
 
+    const leftTranslate = -(CENTER_WIDTH - sideWidth);
+
     return (
-        <div className="flex flex-col gap-10 items-center">
-            <h2 className="text-[60px] about-text">The most trusted cryptocurrency platform</h2>
-            <p className="text-[24px] leading-[36px] text-[#E5E6ED]">We have a features that make our platform the best place to trading.</p>
+        <div className="flex flex-col lg:px-0 md:px-10 sm:px-8 px-6 gap-10 items-center">
+            <h2 className="xl:text-[60px] lg:text-[52px] md:text-[45px] sm:text-[38px] text-[32px] xl:leading-[60px] lg:leading-[56px] leading-[48px] text-center about-text">The most trusted cryptocurrency platform</h2>
+            <p className="lg:text-[24px] lg:leading-6 md:text-[20px] text-[16px] md:leading-5 leading-8 text-center text-[#E5E6ED]">We have a features that make our platform the best place to trading.</p>
             
-            {/* Platform Slider */}
-            <div className="flex relative flex-col items-center w-full pt-20">
-                <div className="flex items-center gap-2 relative w-full justify-start pl-[200px]">
-                    {/* Left Slide (Partial) */}
-                    <div className="w-[500px] opacity-60 transform scale-95 transition-all duration-700 ease-in-out -translate-x-16">
-                        <PlatformSection
-                            title={platformSlides[leftIndex].title}
-                            text={platformSlides[leftIndex].text}
-                            img={platformSlides[leftIndex].img}
-                            imgStyle={platformSlides[leftIndex].imgStyle}
-                        />
+            
+            <div ref={containerRef} className="flex relative flex-col items-center w-full md:pt-20 h-screen">
+                <div className="flex items-center gap-5 relative w-full justify-center overflow-hidden">
+                    
+                    <div className="hidden lg:block overflow-hidden opacity-60 transition-all duration-700 ease-in-out" style={{ width: `${sideWidth}px` }}>
+                        <div className="w-full" style={{ transform: `translateX(${leftTranslate}px)` }}>
+                            <PlatformSection
+                                title={platformSlides[leftIndex].title}
+                                text={platformSlides[leftIndex].text}
+                                img={platformSlides[leftIndex].img}
+                                imgStyle={platformSlides[leftIndex].imgStyle}
+                            />
+                        </div>
                     </div>
                     
-                    {/* Center Slide (Full) */}
-                    <div className="w-[700px] opacity-100 transform scale-100 transition-all duration-700 ease-in-out">
+                    
+                    <div className="w-full lg:w-[700px] opacity-100 transition-all duration-700 ease-in-out">
                         <PlatformSection
                             title={platformSlides[centerIndex].title}
                             text={platformSlides[centerIndex].text}
@@ -68,19 +91,21 @@ export function PlatformInfo(){
                         />
                     </div>
                     
-                    {/* Right Slide (Partial) */}
-                    <div className="w-[500px] opacity-60 transform scale-95 transition-all duration-700 ease-in-out translate-x-16">
-                        <PlatformSection
-                            title={platformSlides[rightIndex].title}
-                            text={platformSlides[rightIndex].text}
-                            img={platformSlides[rightIndex].img}
-                            imgStyle={platformSlides[rightIndex].imgStyle}
-                        />
+                    
+                    <div className="hidden lg:block overflow-hidden opacity-60 transition-all duration-700 ease-in-out" style={{ width: `${sideWidth}px` }}>
+                        <div className="w-full">
+                            <PlatformSection
+                                title={platformSlides[rightIndex].title}
+                                text={platformSlides[rightIndex].text}
+                                img={platformSlides[rightIndex].img}
+                                imgStyle={platformSlides[rightIndex].imgStyle}
+                            />
+                        </div>
                     </div>
                 </div>
                 
-                {/* Navigation Dots */}
-                <div className="flex items-center gap-3 mt-[100px]">
+                
+                <div className="flex items-center gap-3 lg:mt-[100px] md:mt-[60px] mt-12">
                     {platformSlides.map((_, index) => (
                         <button
                             key={index}

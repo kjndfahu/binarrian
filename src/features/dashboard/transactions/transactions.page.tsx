@@ -92,7 +92,7 @@ export function TransactionsPage() {
     return (
         <div
             style={{maxHeight: 'calc(100% - 161px)', scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent'}}
-            className="relative rounded-[14px] overflow-x-auto lg:overflow-x-hidden lg:mx-8 md:mx-5 mx-4 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
+            className="relative md:mb-0 mb-6 rounded-[14px] overflow-x-auto lg:overflow-x-hidden lg:mx-8 md:mx-5 mx-4 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
             <style jsx>{`
                 .custom-scroll::-webkit-scrollbar {
                     width: 8px;

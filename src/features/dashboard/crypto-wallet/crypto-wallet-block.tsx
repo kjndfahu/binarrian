@@ -21,7 +21,7 @@ export function CryptoWalletBlock({value, symbol, data, logo, number, isPositive
                     <p className="text-[16px] leading-[24px] text-[#A5ADCF]">{value}</p>
                 </div>
                 <p className={`text-[18px] leading-[27px] ${isPositive ? 'text-[#11CABE]' : 'text-[#FA2256]'} font-semibold`}>{data}%</p>
-                <img className="absolute bottom-[20px]" src={img} alt="btc"/>
+                <img className="absolute 2xl:w-[270px] 2xl:h-[66px] h-[55px] w-[230px] bottom-[20px]" src={img} alt="btc"/>
             </div>
 
         </div>

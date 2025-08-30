@@ -5,11 +5,11 @@ import {OverallGrowth} from "@/features/dashboard/overview/overall-growth.tsx";
 
 export function OverviewPage() {
     return (
-        <div className="flex px-8 gap-[27px] overflow-y-hidden h-full pb-8">
+        <div className="flex h-full pb-8 overflow-y-hidden px-4 gap-4 flex-col lg:flex-row lg:px-8 lg:gap-[27px]">
             <BalanceBlock/>
-            <div className="flex flex-1 flex-col h-full gap-6 ">
+            <div className="flex flex-1 flex-col h-full gap-4 lg:gap-6 ">
                 <OverallGrowth/>
-                <div className="flex gap-[26px]">
+                <div className="flex flex-col gap-4 lg:flex-row lg:gap-[26px]">
                     <TopAssetsSection/>
                     <TransactionSection/>
                 </div>

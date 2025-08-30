@@ -9,13 +9,13 @@ export function HowItWorks() {
             <div className="flex flex-col relative z-[2] items-center w-full gap-10 mt-10">
                 <LogoRound size="w-[111px] h-[110px]" icon="/img/layers.svg"/>
                 <div className="flex items-center mt-[60px] w-full justify-between">
-                    <HowItWorksBlock logo="/img/browser.svg" title="3 million users" text="At the moment, our exchange has more than 3 million registered users from more than 150 countries & we continue to grow."/>
-                    <HowItWorksBlock logo="/img/browser.svg" title="3 million users" text="At the moment, our exchange has more than 3 million registered users from more than 150 countries & we continue to grow."/>
+                    <HowItWorksBlock logo="/img/lamp.svg" title="Register" text="Quick sign-up for instant access"/>
+                    <HowItWorksBlock logo="/img/start-trading.svg" title="Start Trading" text="Begin your crypto journey"/>
                 </div>
                 <div className="mt-[50px]">
-                    <HowItWorksBlock logo="/img/browser.svg" title="3 million users" text="At the moment, our exchange has more than 3 million registered users from more than 150 countries & we continue to grow."/>
+                    <HowItWorksBlock logo="/img/rocket.svg" title="Earn Money" text="Grow your wealth with crypto"/>
                 </div>
-                <img className="absolute top-[50px] px-[180px] w-full z-[1]" src="/img/line.svg" alt="line"/>
+                <img className="absolute w-full h-full" src="/img/board.png" alt="board" />
             </div>
         </div>
     )

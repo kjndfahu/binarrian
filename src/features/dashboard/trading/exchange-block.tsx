@@ -1,11 +1,11 @@
 export function ExchangeBlock(){
 	return (
-		<div className="flex flex-col gap-6 p-6 rounded-[12px] border-[1px] border-[#D0DCFF8F] w-[320px]">
+		<div className="flex flex-col gap-6 p-6 rounded-[12px] border-[1px] border-[#D0DCFF8F] lg:w-[320px] w-full">
 			<div className="flex items-center justify-between">
 				<h3 className="text-[20px] font-bold text-white leading-[24px]">Exchange</h3>
 				<img className="w-[24px] h-[24px]" src="/img/exchange.svg" alt="icon"/>
 			</div>
-			<div className="flex items-center justify-between">
+			<div className="flex items-center gap-4 lg:justify-between justify-start">
 				<div className="flex items-center gap-2.5">
 					<h4 className="text-[20px] text-white font-semibold leading-[27px]">1</h4>
 					<h5 className="text-[16px] text-[#CACACA] font-bold leading-[24px]">BTC</h5>

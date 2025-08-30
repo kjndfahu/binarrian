@@ -9,12 +9,12 @@ export function SecurityVereficationForm(){
             <SecurityVereficationInputs/>
             <div className="flex items-center gap-2">
                 <button
-                    className="flex items-center justify-center gap-2 font-bold text-[16px] border-[1px] border-[#D0DCFF8F] cursor-pointer text-white leading-[20px] faq-bg rounded-full h-[51px] w-[163px]">
+                    className="flex items-center justify-center gap-2 font-bold text-[16px] border-[1px] border-[#D0DCFF8F] cursor-pointer text-white leading-[20px] faq-bg rounded-full h-[51px] sm:w-[163px] w-full">
                     Resend code
                 </button>
 
                 <button
-                    className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] w-[163px]">
+                    className="flex items-center justify-center gap-2 font-bold text-[16px] cursor-pointer text-white leading-[20px] visit-btn rounded-full h-[51px] sm:w-[163px] w-full">
                     Continue
                     <img src="/img/arrow-right.svg" alt="arrow"/>
                 </button>

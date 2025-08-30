@@ -1,13 +1,19 @@
-import {ExchangeBlock} from "@/features/dashboard/trading/exchange-block.tsx";
 import {TradingGraph} from "@/features/dashboard/trading/trading-graph.tsx";
 import {MarketTradesSection} from "@/features/dashboard/trading/market-trades-section.tsx";
+import { SearchBlockTrade } from "./search-block-trade";
+import { BuyBlock } from "../dashboard/trading/buy-block";
 
 export function TradePage() {
     return (
-        <div className="flex flex-col relative gap-[100px]">
-            <ExchangeBlock/>
-            <TradingGraph/>
-            <MarketTradesSection/>
+        <div className="flex lg:flex-row flex-col-reverse h-full gap-6 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 py-[46px] relative items-stretch">
+            <div className="flex flex-col gap-6">
+                <SearchBlockTrade/>
+                <BuyBlock/>
+            </div>
+            <div className="flex flex-col w-full gap-6">
+                <TradingGraph/>
+                <MarketTradesSection/>
+            </div>
         </div>
     );
 }

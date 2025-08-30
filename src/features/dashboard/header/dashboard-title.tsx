@@ -34,7 +34,7 @@ export function DashboardTitle() {
     return (
         <div className="flex gap-2.5 items-center">
             <Logo color="#FFFFFF" />
-            <h2 className="text-[25px] leading-8 font-bold text-white">
+            <h2 className="text-[25px] leading-8 font-bold w-[200px] text-white">
                 {title}
             </h2>
         </div>

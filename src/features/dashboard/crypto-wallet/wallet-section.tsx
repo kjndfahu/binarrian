@@ -9,7 +9,7 @@ export function WalletSection(){
     const [form, setForm] = useState('default');
 
     return (
-        <div style={{ height: 'calc(100vh - 420px)'}} className="relative  lg:w-[24%] w-full rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
+        <div className="relative h-[523px] lg:w-[24%] w-full rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
             {form === "default" && (<DefaultForm setForm={setForm}/>)}
             {form === "withdraw" && (<WithdrawForm setForm={setForm}/>)}
             {form === "deposit" && (<DepositForm setForm={setForm}/>)}

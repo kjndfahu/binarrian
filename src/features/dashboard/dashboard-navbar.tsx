@@ -10,7 +10,8 @@ import {
     Wallet
 } from "@/shared/ui/dashboard-icons.tsx";
 import { useLocation, useNavigate } from "react-router-dom";
-import {ROUTES} from "@/shared/model/routes.ts";
+import { ROUTES } from "@/shared/model/routes.ts";
+import { useState, useEffect } from "react";
 
 const routeConfig = {
     "overview": { Logo: OverviewLogo, title: 'Overview', link: ROUTES.OVERVIEW },
@@ -29,20 +30,42 @@ export function DashboardNavbar() {
     const location = useLocation();
     const navigate = useNavigate();
     const path = location.pathname.split('/')[1] || 'default';
+    const [gap, setGap] = useState(16); // Default gap value
+
+    useEffect(() => {
+        const updateGap = () => {
+            const screenHeight = window.innerHeight;
+            // Calculate dynamic gap: scale between 12px and 20px based on screen height
+            // Assuming 720p as reference height for min gap (12px) and 1080p for max gap (20px)
+            const minGap = 36;
+            const maxGap = 56;
+            const minHeight = 720;
+            const maxHeight = 1080;
+            const calculatedGap = Math.min(
+                maxGap,
+                Math.max(minGap, (screenHeight - minHeight) / (maxHeight - minHeight) * (maxGap - minGap) + minGap)
+            );
+            setGap(Math.round(calculatedGap));
+        };
+
+        updateGap(); // Initial calculation
+        window.addEventListener('resize', updateGap); // Update on resize
+        return () => window.removeEventListener('resize', updateGap); // Cleanup
+    }, []);
 
     const handleNavigation = (link: string) => {
         navigate(link);
     };
 
     return (
-        <div className="md:flex hidden fixed top-0 left-0 flex-col min-h-screen max-h-screen items-center justify-between px-7 pt-8 pb-16 gap-18 w-[80px]  z-10">
-            <img className="cursor-pointer" src="/img/binnarian-logo.svg" alt="logo"/>
+        <div className="md:flex hidden fixed top-0 left-0 flex-col min-h-screen max-h-screen items-center justify-between px-7 pt-8 pb-16 w-[96px] z-10">
+            <img className="cursor-pointer w-10 h-10" src="/img/binnarian-logo.svg" alt="logo"/>
             <img
                 className="inset-0 w-full absolute top-0 z-[3] pointer-events-none select-none"
                 src="/img/points.avif"
                 alt="points"
             />
-            <div className="flex flex-col gap-14 relative">
+            <div className="flex flex-col relative" style={{ gap: `${gap}px` }}>
                 {Object.entries(routeConfig).map(([key, { Logo, link }]) => (
                     key !== 'default' && key !== 'profile' && (
                         <div
@@ -74,5 +97,5 @@ export function DashboardNavbar() {
                 )}
             </div>
         </div>
-    )
+    );
 }

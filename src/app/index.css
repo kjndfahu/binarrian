@@ -278,3 +278,7 @@ input[type=number] {
 .MuiGauge-valueText {
   color: rgba(255, 255, 255, 1);
 }
+
+.join-bg{
+  background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, #140F2A 45deg, rgba(100, 67, 194, 0) 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+}

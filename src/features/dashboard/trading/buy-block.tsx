@@ -1,6 +1,6 @@
 export function BuyBlock(){
 	return (
-		<div className="flex flex-col gap-6 p-6 rounded-[12px] border-[1px] border-[#D0DCFF8F] w-[320px]">
+		<div className="flex flex-col gap-6 p-6 rounded-[12px] border-[1px] border-[#D0DCFF8F] lg:w-[320px] w-full">
 			<div className="flex items-center justify-between">
 				<h3 className="text-[20px] font-bold text-white leading-[24px]">Bitcoin</h3>
 				<img className="w-[32px] h-[32px]" src="/img/btc-icon.svg" alt="icon"/>
@@ -40,7 +40,7 @@ export function BuyBlock(){
 					Buy
 				</button>
 				<button
-					className="text-[16px] w-full h-[58px] rounded-full text-[#FA2256] leading-[20px] font-semibold border-[1px] border-[#FA2256]">
+					className="text-[16px] w-full h-[58px] rounded-full cursor-pointer text-[#FA2256] leading-[20px] font-semibold border-[1px] border-[#FA2256]">
 					Sell
 				</button>
 			</div>

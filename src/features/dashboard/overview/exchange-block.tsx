@@ -1,6 +1,6 @@
 export function ExchangeBlock(){
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col lg:pt-0 pt-6 gap-6">
             <div className="flex items-center justify-between">
                 <h4 className="text-[20px] leading-6 font-bold text-white">Exchange</h4>
                 <img src="/img/exchange.svg" alt="exchange"/>
