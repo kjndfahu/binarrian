@@ -137,56 +137,84 @@ export function MarketTradesSection() {
 
     return (
         <div
-            className="flex flex-col max-h-[416px] w-full relative overflow-hidden gap-3 flex-1 rounded-[12px] border-[1px] border-white pt-6 pb-0">
-            <div className="flex items-center justify-between px-6">
-                <h3 className="text-[20px] leading-[24px] text-white font-bold">Market Trades</h3>
-                <div className="lg:flex hidden gap-4 items-center">
-                    <div onClick={() => setTab('open-orders')}
-                         className={`text-[16px] ${tab === 'open-orders' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Open
-                        Orders
-                    </div>
-                    <div onClick={() => setTab('order-history')}
-                         className={`text-[16px] ${tab === 'order-history' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Order
-                        History
-                    </div>
-                    <div onClick={() => setTab('order-book')}
-                         className={`text-[16px] ${tab === 'order-book' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'}  cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Order
-                        Book
-                    </div>
-                </div>
-                <MarketTradesPopup />
-            </div>
-            <div className="flex flex-col px-6 gap-4 flex-1 min-h-0 overflow-hidden">
-                <div className="flex items-center font-bold py-4 border-b border-white/10 flex-shrink-0">
-                    <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
-                        <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Time</span>
-                    </div>
-                    <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
-                        <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Price (ETH)</span>
-                    </div>
-                    <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
-                        <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Amount (BTC)</span>
-                    </div>
-                    <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
-                        <span className="lg:text-[16px] text-[14px] text-right text-[#CACACA] tracking-wide">Total (ETH)</span>
-                    </div>
-                </div>
-                <div
-                    style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }}
-                    className="flex flex-col gap-4 overflow-y-auto md:overflow-x-hidden overflow-x-auto md:flex-col-reverse"
-                >
-                    {tradesData.map((item, index) => (
-                        <div key={index} className="flex items-center justify-between">
-                            <div className="md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 text-white">{item.time}</div>
-                            <div
-                                className={`md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 ${item.isPositive ? 'text-[#11CABE]' : 'text-[#FA2256]'}`}
-                            >
-                                {item.price}
+            style={{scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent'}}
+            className="relative rounded-[12px] w-full overflow-x-auto lg:overflow-x-hidden border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]"
+        >
+            <style jsx>{`
+                .custom-scroll::-webkit-scrollbar {
+                    width: 8px;
+                    height: 8px;
+                }
+
+                .custom-scroll::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                .custom-scroll::-webkit-scrollbar-thumb {
+                    background: #D0DCFF8F;
+                    border-radius: 4px;
+                }
+            `}</style>
+            <div className="flex flex-col z-[3] h-full w-full items-center justify-center gap-6 min-w-[800px] lg:min-w-0">
+                <div className="w-full z-[3] rounded-[12px] bg-[#070322] overflow-hidden">
+                    <div className="flex items-center z-[3] justify-between px-6 py-6 border-b border-white/10">
+                        <h3 className="text-[20px]  leading-[24px] text-white font-bold">Market Trades</h3>
+                        <div className="lg:flex hidden z-[3] gap-4 items-center">
+                            <div onClick={() => setTab('open-orders')}
+                                 className={`text-[16px] ${tab === 'open-orders' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Open
+                                Orders
                             </div>
-                            <div className="md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 text-white">{item.amount}</div>
-                            <div className="md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 text-white">{item.total}</div>
+                            <div onClick={() => setTab('order-history')}
+                                 className={`text-[16px] ${tab === 'order-history' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Order
+                                History
+                            </div>
+                            <div onClick={() => setTab('order-book')}
+                                 className={`text-[16px] ${tab === 'order-book' ? 'faq-bg text-white' : 'bg-transparent text-[#CACACA]'} cursor-pointer rounded-full leading-[25px] font-semibold px-4 py-2`}>Order
+                                Book
+                            </div>
                         </div>
-                    ))}
+                        <MarketTradesPopup/>
+                    </div>
+                    <div
+                        style={{scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent'}}
+                        className="overflow-y-auto max-h-[calc(416px-96px)] custom-scroll [direction:rtl] lg:[direction:ltr]"
+                    >
+                        <div className="[direction:ltr] pr-[20px] lg:pr-0">
+                            <div
+                                className="flex items-center font-bold py-4 border-b border-white/10 flex-shrink-0 px-6">
+                                <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
+                                    <span
+                                        className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Time</span>
+                                </div>
+                                <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
+                                    <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Price (ETH)</span>
+                                </div>
+                                <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
+                                    <span className="lg:text-[16px] text-[14px] text-[#CACACA] tracking-wide">Amount (BTC)</span>
+                                </div>
+                                <div className="md:flex-1 md:w-auto w-[180px] min-w-0">
+                                    <span
+                                        className="lg:text-[16px] text-[14px] text-right text-[#CACACA] tracking-wide">Total (ETH)</span>
+                                </div>
+                            </div>
+                            {tradesData.map((item, index) => (
+                                <div key={index}
+                                     className="flex items-center justify-between px-6 py-4 border-b border-white/10 hover:bg-[#FFFFFF05] transition-colors">
+                                    <div
+                                        className="md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 text-white">{item.time}</div>
+                                    <div
+                                        className={`md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 ${item.isPositive ? 'text-[#11CABE]' : 'text-[#FA2256]'}`}
+                                    >
+                                        {item.price}
+                                    </div>
+                                    <div
+                                        className="md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 text-white">{item.amount}</div>
+                                    <div
+                                        className="md:flex-1 md:w-auto w-[180px] font-bold lg:text-[16px] text-[14px] leading-6 text-white">{item.total}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
             <img

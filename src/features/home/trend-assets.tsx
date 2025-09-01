@@ -1,8 +1,8 @@
-export function TrendAssets(){
+export function TrendAssets() {
     const trendAssets = [
         {
             name: "Bitcoin",
-            icon: "/img/btc-icon.svg",
+            icon: "/img/bnb-icon.svg",
             symbol: "BTC",
             price: "USD 53,260.20",
             change: "0.25%",
@@ -11,7 +11,7 @@ export function TrendAssets(){
         },
         {
             name: "Bitcoin",
-            icon: "/img/btc-icon.svg",
+            icon: "/img/bnb-icon.svg",
             symbol: "BTC",
             price: "USD 53,260.20",
             change: "0.25%",
@@ -20,7 +20,7 @@ export function TrendAssets(){
         },
         {
             name: "Bitcoin",
-            icon: "/img/btc-icon.svg",
+            icon: "/img/bnb-icon.svg",
             symbol: "BTC",
             price: "USD 53,260.20",
             change: "0.25%",
@@ -66,15 +66,14 @@ export function TrendAssets(){
     ];
 
     return (
-        <div className="flex flex-col items-center  justify-center 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 gap-12">
+        <div className="flex flex-col items-center justify-center 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 gap-12">
             <div className="flex flex-col items-center justify-center md:gap-4 gap-6">
                 <div className="py-3 px-[22px] w-[166px] trend-assets-border text-normal text-center bg-[#FFFFFF1F] text-[20px] leading-[24px] text-white rounded-full">
-                Trend Assets
+                    Trend Assets
                 </div>
                 <h2 className="md:text-[48px] sm:text-[36px] text-[32px] text-center z-[2] hero-text font-normal">Investigating the Latest Coin Trends</h2>
                 <p className="md:text-[18px] text-[16px] mt-1 text-center z-[2] xl:w-[695px] md:w-[500px] sm:w-[400px] w-[320px] text-white font-normal">The pulse of modern cryptocurrency markets: detailed analysis of market dynamics and future potential.</p>
             </div>
-
 
             <div className="w-full md:rounded-[20px] rounded-[12px] bg-[#03021980] backdrop-blur-lg z-[3] border-[1px] border-[#FFFFFF1F] overflow-hidden">
 
@@ -99,7 +98,7 @@ export function TrendAssets(){
                 {trendAssets.map((asset, index) => (
                     <div
                         key={index}
-                        className="flex items-center justify-between xl:px-8 md:px-5 px-4 md:py-6 py-4 md:border-b border-[#D0DCFF1F] transition-colors group"
+                        className="flex items-center justify-between xl:px-8 md:px-5 px-4 md:py-6 py-4 md:border-b border-[#D0DCFF1F] transition-colors group relative"
                     >
                         <div className="flex items-center xl:gap-4 md:gap-3 gap-4 xl:w-[300px] lg:w-[270px] md:w-[200px] w-auto">
                             <img
@@ -108,27 +107,27 @@ export function TrendAssets(){
                                 alt="logo"
                             />
                             <div className="flex md:flex-row flex-col md:items-center xl:gap-10 md:gap-5">
-        <span className="xl:text-[19px] md:text-[15px] text-[13px] font-semibold text-white">
-          {asset.symbol}
-        </span>
+                                <span className="xl:text-[19px] md:text-[15px] text-[13px] font-semibold text-white">
+                                    {asset.symbol}
+                                </span>
                                 <span className="xl:text-[19px] md:text-[15px] text-[13px] text-[#B9BDEA]">
-          {asset.name}
-        </span>
+                                    {asset.name}
+                                </span>
                             </div>
                         </div>
                         <div className="md:flex hidden flex-1">
-      <span className="xl:text-[18px] md:text-[15px] text-[13px] font-semibold text-white">
-        {asset.price}
-      </span>
+                            <span className="xl:text-[18px] md:text-[15px] text-[13px] font-semibold text-white">
+                                {asset.price}
+                            </span>
                         </div>
                         <div className="md:flex hidden lg:flex-1 w-[80px]">
-      <span
-          className={`xl:text-[19px] md:text-[15px] text-[13px] ${
-              asset.isPositive ? "text-[#11CABE]" : "text-[#FA2256]"
-          }`}
-      >
-        {asset.change}
-      </span>
+                            <span
+                                className={`xl:text-[19px] md:text-[15px] text-[13px] ${
+                                    asset.isPositive ? "text-[#11CABE]" : "text-[#FA2256]"
+                                }`}
+                            >
+                                {asset.change}
+                            </span>
                         </div>
                         <div className="md:flex hidden flex-1">
                             <img
@@ -138,22 +137,20 @@ export function TrendAssets(){
                             />
                         </div>
                         <div className="md:flex hidden xl:w-[120px] lg:w-[95px] w-[75px]">
-                            <button className="lg:w-[92px] w-[75px] lg:h-[57px] h-[42px] cursor-pointer text-white font-bold text-[17px] hover:bg-gradient-to-r hover:from-[#B189FF] hover:to-[#8144F6] rounded-full border-[1px] border-[#6C24F5] transition-all duration-300">
+                            <button className="lg:w-[92px] w-[75px] lg:h-[57px] h-[42px] cursor-pointer text-white font-bold text-[17px] hover:bg-gradient-to-r hover:from-[#B189FF] hover:to-[#8144F6] rounded-full border-[1px] border-[#6C24F6] transition-all duration-300">
                                 Buy
                             </button>
                         </div>
-                        <div className="md:hidden relative flex flex-col items-end w-[120px] text-[13px] font-semibold text-white group-hover:hidden">
-                            {asset.price}
+                        <div className="md:hidden relative flex flex-col items-end w-[120px] text-[13px] font-semibold text-white">
+                            <p className="transition-all duration-300 group-hover:opacity-0">{asset.price}</p>
                             <span
-                                className={`text-[13px] ${
+                                className={`text-[13px] transition-all duration-300 group-hover:opacity-0 ${
                                     asset.isPositive ? "text-[#11CABE]" : "text-[#FA2256]"
                                 }`}
                             >
-                            {asset.change}
+                                {asset.change}
                             </span>
-                        </div>
-                        <div className="md:hidden hidden group-hover:flex items-center justify-end w-[120px]">
-                            <button className="w-[84px] h-[39px] cursor-pointer text-white font-bold text-[13px] bg-gradient-to-r from-[#B189FF] to-[#8144F6] rounded-full border-[1px] border-[#6C24F5] transition-all duration-300">
+                            <button className="absolute bottom-0 right-0 mt-2 w-[84px] h-[39px] cursor-pointer text-white font-bold text-[13px] bg-gradient-to-r from-[#B189FF] to-[#8144F6] rounded-full border-[1px] border-[#6C24F6] transition-all duration-300 opacity-0 group-hover:opacity-100">
                                 Buy
                             </button>
                         </div>

@@ -6,7 +6,7 @@ export function StakeBlock(){
         <div
             className="relative lg:w-[300px] w-full h-[564px] rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]">
             <div
-                className="flex flex-col h-full gap-[12px] bg-[#070322] lg:w-[300px] w-full p-6 rounded-[12px]">
+                className="flex flex-col h-full gap-[12px] bg-[#070322] lg:w-[297px] w-full p-6 rounded-[12px]">
                 <div className="flex items-center gap-4">
                     <img src="/img/eth-icon.svg" className="w-8 h-8" alt="btc"/>
                     <div className="flex flex-col gap-1">

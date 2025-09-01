@@ -417,7 +417,6 @@ export function OverallGrowth() {
                 },
             });
 
-            // Custom tooltip logic
             const customTooltip = document.createElement('div');
             customTooltip.className = 'custom-tooltip';
             customTooltip.style.background = 'rgba(0, 0, 0, 0.8)';
@@ -491,12 +490,12 @@ export function OverallGrowth() {
 
     return (
         <div
-            className="relative rounded-[14px] border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]"
+            className="relative rounded-[14px] h-full flex-1 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]"
         >
             <div
-                className="flex flex-col gap-[22px] bg-[#070322] h-full p-6 rounded-[12px]"
+                className="flex flex-col gap-[22px] flex-1 bg-[#070322] h-full rounded-[12px]"
             >
-                <div className="flex items-center justify-between">
+                <div className="flex items-center px-6 pt-6 h-full justify-between">
                     <h3 className="text-[20px] text-white leading-[24px] font-bold">Overall Growth</h3>
                     <div className="xl:flex hidden gap-4 items-center">
                         <div
@@ -527,7 +526,7 @@ export function OverallGrowth() {
                     <OvverralGrowthAdaptive />
                 </div>
                 <div
-                    className="w-full h-[300px] mt-4 select-none"
+                    className="w-full h-[337px] md:pl-6 pl-4 mt-4 select-none"
                     style={{
                         outline: 'none',
                         WebkitUserSelect: 'none',

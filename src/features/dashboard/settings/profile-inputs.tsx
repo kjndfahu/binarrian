@@ -48,7 +48,7 @@ export function ProfileInputs(){
             <div className="flex md:flex-row flex-col items-center w-full md:gap-9 gap-6">
 
                 <div className="flex flex-col w-full gap-4">
-                    <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">Email</label>
+                    <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">Deposit Assets</label>
                     <div className="flex w-full h-[56px] px-6 py-3 faq-bg rounded-full">
                         <input placeholder="Your e-mail"
                                className="text-[14px] leading-6 text-[#808191] w-full outline-0 ring-0 placeholder:text-[#808191]"
@@ -57,7 +57,7 @@ export function ProfileInputs(){
                 </div>
 
                 <div className="flex flex-col w-full gap-4">
-                    <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">Location</label>
+                    <label className="text-[12px] font-medium text-white leading-[16px]" htmlFor="">Withdraw Assets</label>
                     <div className="flex w-full h-[56px] px-6 py-3 faq-bg rounded-full">
                         <input placeholder="Belgrade, Serbia"
                                className="text-[14px] leading-6 text-[#808191] w-full outline-0 ring-0 placeholder:text-[#808191]"

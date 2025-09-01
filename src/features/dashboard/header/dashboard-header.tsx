@@ -14,7 +14,7 @@ export function DashboardHeader() {
     const notificationRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="flex flex-col w-full md:py-[37px] py-6 lg:px-8 md:px-5 px-4 gap-6">
+        <div className="flex flex-col w-full md:py-[25px] py-6 lg:px-8 md:px-5 px-4 gap-6">
             <div className="flex gap-5 w-full items-center justify-between">
                 <img src="/img/logo.svg" alt="logo"
                      className="md:hidden flex relative z-10 cursor-pointer pointer-events-none select-none"/>

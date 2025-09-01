@@ -123,7 +123,9 @@ export function CryptoWalletTable() {
     ];
 
     return (
+
         <div
+            style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }}
             className="relative rounded-t-[22px] w-full overflow-x-auto border-b-0 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]"
         >
             <style jsx>{`
@@ -143,7 +145,7 @@ export function CryptoWalletTable() {
                 <div
                     className="w-full rounded-t-[20px] bg-[#070322] overflow-hidden"
                 >
-                    <div className="flex items-center mt-6 justify-between xl:px-[30px] px-6 py-6 border-b border-[#D0DCFF2F]">
+                    <div  className="flex items-center mt-6 justify-between xl:px-[30px] px-6 py-6 border-b border-[#D0DCFF2F]">
                         <div className="flex items-center gap-4 2xl:w-[300px] xl:w-[200px] lg:w-[160px] w-[300px]">
                             <span className="2xl:text-[16px] text-[15px] leading-6 text-[#CACACA]">Assets</span>
                         </div>

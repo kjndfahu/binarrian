@@ -32,8 +32,8 @@ export function AppHeader({ top }: { top: string }) {
                 )}
                 {location.pathname === "/" && (
                     <div
-                        className={`flex items-center justify-center absolute 2xl:top-[600px] xl:top-[500px] lg:top-[350px] sm:top-[500px] top-[550px] left-[45%] z-[2] cursor-pointer w-[120px] h-[118px] arrow-down-bg rounded-full border-[1.5px] border-white`}>
-                        <img src="/img/arrow-down-svg.svg" alt="arrow"/>
+                        className={`flex items-center justify-center cursor-pointer absolute 2xl:top-[650px] xl:top-[650px] lg:top-[550px] sm:top-[600px] top-[620px] sm:left-[45%] left-[40%] z-[2] cursor-pointer md:w-[120px] w-[58px] md:h-[118px] h-[57px] arrow-down-bg rounded-full border-[1.5px] border-white`}>
+                        <img className="md:h-[70px] h-[32px]" src="/img/arrow-down-svg.svg" alt="arrow"/>
                     </div>
                 )}
             </header>

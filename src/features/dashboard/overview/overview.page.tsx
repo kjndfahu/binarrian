@@ -9,7 +9,7 @@ export function OverviewPage() {
             <BalanceBlock/>
             <div className="flex flex-1 flex-col h-full gap-4 lg:gap-6 ">
                 <OverallGrowth/>
-                <div className="flex flex-col gap-4 lg:flex-row lg:gap-[26px]">
+                <div className="flex flex-col  gap-4 lg:flex-row lg:gap-[26px]">
                     <TopAssetsSection/>
                     <TransactionSection/>
                 </div>

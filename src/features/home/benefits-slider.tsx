@@ -79,7 +79,7 @@ export function BenefitsSlider() {
                 ))}
             </div>
 
-            <div className="flex items-center sm:gap-3 gap-1 md:mt-[100px] mt-12">
+            <div className="flex items-center z-[3] sm:gap-3 gap-1 md:mt-[100px] mt-12">
                 {Array.from({ length: totalSlides }, (_, index) => (
                     <button
                         key={index}

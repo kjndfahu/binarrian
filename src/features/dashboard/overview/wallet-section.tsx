@@ -52,7 +52,9 @@ export function WalletSection(){
             </div>
 
             <div className="flex lg:flex-row flex-col gap-5">
-                <div className="lg:self-start self-center lg:w-[163px] w-[233px] lg:h-[163px] h-[233px]  outline-0 ring-0 select-none relative" style={{outline: 'none'}}>
+                <div
+                    className="lg:flex hidden lg:self-start self-center w-[163px] h-[163px] outline-0 ring-0 select-none relative"
+                    style={{outline: 'none'}}>
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -76,18 +78,60 @@ export function WalletSection(){
                                     />
                                 ))}
                             </Pie>
-                            <Tooltip content={<CustomTooltip />} />
+                            <Tooltip content={<CustomTooltip/>}/>
                         </PieChart>
                     </ResponsiveContainer>
 
-                    <div className="absolute p-[3px] inset-0 lg:left-[25px] left-[33px] lg:top-[25px] top-[33px] lg:tooltip-bg-balance rounded-full lg:w-[113px] w-[167px] lg:h-[113px] h-[167px] flex items-center justify-center pointer-events-none">
-                        <div className="flex aspect-square border-[2px] border-dashed w-full border-[#8144F6] rounded-full gap-1 items-center justify-center text-center">
+                    <div
+                        className="absolute p-[3px] inset-0 lg:left-[25px] left-[33px] lg:top-[25px] top-[33px] lg:tooltip-bg-balance rounded-full lg:w-[113px] w-[167px] lg:h-[113px] h-[167px] flex items-center justify-center pointer-events-none">
+                        <div
+                            className="flex aspect-square border-[2px] border-dashed w-full border-[#8144F6] rounded-full gap-1 items-center justify-center text-center">
                             <img className="rotate-180" src="/img/arrow-green-down.svg" alt="arrow"/>
                             <p className="text-white font-semibold text-[20px] leading-[27px]">2.31%</p>
                         </div>
                     </div>
                 </div>
-                
+
+                <div
+                    className="lg:hidden flex lg:self-start self-center w-[233px] h-[233px] outline-0 ring-0 select-none relative"
+                    style={{outline: 'none'}}>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                            <Pie
+                                data={data}
+                                cx="50%"
+                                cy="50%"
+                                innerRadius={95}
+                                outerRadius={110}
+                                paddingAngle={5}
+                                cornerRadius={3}
+                                dataKey="value"
+                                label={renderCustomizedLabel}
+                                labelLine={false}
+                            >
+                                {data.map((entry, index) => (
+                                    <Cell
+                                        key={`cell-${index}`}
+                                        fill={entry.color}
+                                        stroke={entry.color}
+                                        strokeWidth={2}
+                                    />
+                                ))}
+                            </Pie>
+                            <Tooltip content={<CustomTooltip/>}/>
+                        </PieChart>
+                    </ResponsiveContainer>
+
+                    <div
+                        className="absolute p-[3px] inset-0 lg:left-[25px] left-[33px] lg:top-[25px] top-[33px] lg:tooltip-bg-balance rounded-full lg:w-[113px] w-[167px] lg:h-[113px] h-[167px] flex items-center justify-center pointer-events-none">
+                        <div
+                            className="flex aspect-square border-[2px] border-dashed w-full border-[#8144F6] rounded-full gap-1 items-center justify-center text-center">
+                            <img className="rotate-180" src="/img/arrow-green-down.svg" alt="arrow"/>
+                            <p className="text-white font-semibold text-[20px] leading-[27px]">2.31%</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="flex flex-col gap-2">
                     <CurrencyBlock/>
                     <CurrencyBlock/>

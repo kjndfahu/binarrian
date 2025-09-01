@@ -84,6 +84,7 @@ export function StakingTable() {
 
     return (
         <div
+            style={{ scrollbarWidth: 'thin', scrollbarColor: '#D0DCFF8F transparent' }}
             className="relative rounded-t-[22px] w-full overflow-x-auto border-b-0 border border-transparent bg-gradient-to-br from-[rgba(208,220,255,0.28)] to-[rgba(208,220,255,0.025)] p-[1px]"
         >
             <style jsx>{`

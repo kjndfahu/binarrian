@@ -246,7 +246,12 @@ export const router = createBrowserRouter([
                 lazy: async () => {
                     const RegisterPage = (await import("../features/auth/register.page")).default;
                     return {
-                        element: <RegisterPage />,
+                        element: (
+                            <div>
+                                <AuthHeader/>
+                                <RegisterPage />
+                            </div>
+                        ),
                     };
                 },
             },
@@ -255,7 +260,12 @@ export const router = createBrowserRouter([
                 lazy: async () => {
                     const PassRecoveryPage = (await import("../features/auth/pass-recovery.page")).default;
                     return {
-                        element: <PassRecoveryPage />,
+                        element: (
+                            <div>
+                                <AuthHeader/>
+                                <PassRecoveryPage />
+                            </div>
+                        ),
                     };
                 },
             },

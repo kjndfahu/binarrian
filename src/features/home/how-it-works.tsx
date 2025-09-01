@@ -11,19 +11,25 @@ export function HowItWorks() {
                 setup, deposit management, trading strategy development, and profit withdrawal</p>
             <div className="flex flex-col relative z-[2] items-center w-full gap-10 mt-10">
                 <LogoRound size="w-[111px] h-[110px]" icon="/img/layers.svg"/>
+
+                <div className="lg:hidden flex w-[1px] mt-[40px] bg-[#ffffff82] h-[46px]"></div>
+
                 <div
-                    className="flex md:gap-0 gap-20 md:flex-row flex-col items-center md:mt-[60px] mt-[120px] w-full md:justify-between">
+                    className="flex lg:gap-0 gap-10 lg:flex-row flex-col items-center lg:mt-[60px] mt-[40px] w-full lg:justify-between">
                     <HowItWorksBlock logo="/img/lamp.svg" title="Register" text="Quick sign-up for instant access"/>
+                    <div className="lg:hidden flex w-[1px] bg-[#ffffff82] h-[46px]"></div>
                     <HowItWorksBlock logo="/img/start-trading.svg" title="Start Trading"
                                      text="Begin your crypto journey"/>
+                    <div className="lg:hidden flex w-[1px] bg-[#ffffff82] h-[46px]"></div>
                 </div>
-                <div className="md:w-auto w-full flex items-center justify-center mt-[50px]">
+                <div className="lg:w-auto w-full flex items-center justify-center mt-[50px]">
                     <HowItWorksBlock logo="/img/rocket.svg" title="Earn Money" text="Grow your wealth with crypto"/>
                 </div>
                 <img className="absolute w-full h-full" src="/img/board.png" alt="board"/>
-                <img className="md:flex hidden absolute top-[55px] 2xl:w-[77%] xl:w-[70%] w-[60%]" src="/img/node.png"
+                <img className="lg:flex hidden absolute z-[1] xl:top-[55px] top-[65px] 2xl:w-[77%] xl:w-[70%] w-[65%]"
+                     src="/img/node.png"
                      alt="node"/>
-                <img className="md:flex hidden absolute top-[55px]" src="/img/node-2.png" alt="node"/>
+                <img className="lg:flex hidden absolute top-[55px]" src="/img/node-2.png" alt="node"/>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ const platformSlides = [
         title: "Protection",
         text: "Our platform offers industry-leading security to safeguard your assets. Advanced encryption and multi-layer authentication keep your data protected. We prioritize your safety, with every transaction.",
         img: "/img/protection-img.svg",
-        imgStyle: "self-center z-[2]"
+        imgStyle: "self-center md:h-auto h-[100px] z-[2]"
     },
     {
         title: "Dashboard",
@@ -18,7 +18,7 @@ const platformSlides = [
         title: "Device Support",
         text: "Access your account from any device—mobile, tablet, or desktop. The platform is optimized for a seamless experience across all screen sizes. Stay connected and in control of your crypto wherever you are.",
         img: "/img/device-support.svg",
-        imgStyle: "self-center z-[2]"
+        imgStyle: "self-center md:h-auto h-[106px] z-[2]"
     }
 ];
 
@@ -72,7 +72,6 @@ export function PlatformInfo(){
             <div ref={containerRef} className="flex relative flex-col items-center w-full md:pt-20 overflow-hidden">
                 <div className="flex items-center gap-5 relative w-full justify-center overflow-hidden">
 
-                    {/* Левый блок - только на больших экранах */}
                     <div className="hidden lg:block overflow-hidden transition-all duration-700 ease-in-out"
                          style={{width: `${sideWidth}px`}}>
                         <div className="w-full" style={{transform: `translateX(${leftTranslate}px)`}}>
@@ -85,7 +84,7 @@ export function PlatformInfo(){
                         </div>
                     </div>
 
-                    {/* Центральный блок - основной контент */}
+
                     <div className="w-full lg:w-[700px] transition-all duration-700 ease-in-out">
                         <PlatformSection
                             title={platformSlides[centerIndex].title}
@@ -95,7 +94,7 @@ export function PlatformInfo(){
                         />
                     </div>
 
-                    {/* Правый блок - только на больших экранах */}
+
                     <div className="hidden lg:block overflow-hidden transition-all duration-700 ease-in-out"
                          style={{width: `${sideWidth}px`}}>
                         <div className="w-full">
@@ -109,8 +108,8 @@ export function PlatformInfo(){
                     </div>
                 </div>
 
-                {/* Пагинация */}
-                <div className="flex items-center gap-3 lg:mt-[100px] z-[2] md:mt-[60px] mt-12">
+
+                <div className="flex items-center gap-3  z-[3] lg:mt-[100px] z-[2] md:mt-[60px] mt-12">
                     {platformSlides.map((_, index) => (
                         <button
                             key={index}
@@ -125,7 +124,7 @@ export function PlatformInfo(){
                 </div>
             </div>
 
-            {/* Карта - только на больших экранах */}
+
             <div className="sm:flex hidden absolute top-[180px] z-[1] w-screen left-1/2 transform -translate-x-1/2 overflow-hidden">
                 <img className="w-[2416px] h-[600px] object-cover" src="/img/map.png" alt="map"/>
             </div>

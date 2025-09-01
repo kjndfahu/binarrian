@@ -291,3 +291,12 @@ input[type=number] {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
   conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
 }
+
+.trade-bg{
+  background: linear-gradient(90deg, rgba(183, 121, 245, 0.2) 0%, rgba(133, 71, 246, 0.1) 100%);
+}
+
+.node{
+  border: 0.38px solid;
+  border-image-source: linear-gradient(180deg, rgba(133, 71, 246, 0.16) -6.16%, rgba(255, 255, 255, 0.693333) 21.11%, rgba(255, 255, 255, 0.24) 73.95%, rgba(133, 71, 246, 0.16) 102.92%);
+}

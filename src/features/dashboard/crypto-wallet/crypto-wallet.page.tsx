@@ -29,7 +29,7 @@ export function CryptoWalletPage() {
     return (
         <div className="flex flex-col h-full 2xl:gap-6 lg:gap-2 gap-6">
             <div className="flex flex-col gap-6">
-                <div className="hidden lg:grid grid-cols-4 2xl:gap-6 gap-2 lg:px-0 md:px-5 px-4">
+                <div className="hidden lg:grid grid-cols-4 2xl:gap-6 gap-2 lg:px-8 md:px-5 px-4">
                     {cryptoBlocks.map((block, index) => (
                         <CryptoWalletBlock 
                             key={index}

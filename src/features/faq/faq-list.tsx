@@ -2,7 +2,7 @@ import { FaqBlock } from "./faq-block";
 
 export function FaqList(){
     return (
-        <div className="flex flex-col gap-6 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6  pt-[140px]">
+        <div className="flex flex-col gap-6 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 md:pb-0 pb-[52px] pt-[140px]">
             <FaqBlock title="What is cryptocurrency?" text="Cryptocurrency is a type of virtual currency that uses cryptography to secure transactions that are digitally recorded on a distributed ledger, such as a blockchain. A transaction involving cryptocurrency that is recorded on a distributed ledger is referred to as an “on-chain” transaction; a transaction that is not recorded on the distributed ledger is referred to as an “off-chain” transaction."/>
             <FaqBlock title="How to log in to your account?" text="Go to /login . In this window, enter your e-mail address, password, and captcha. Click the Login button. You logged in to your account. Now you can make a deposit or start trading. We also recommend you to log into your personal account and enable the two-factor authentication. More information can be found at the link: /about"/>
             <FaqBlock title="How to register an account?" text="Go to /register . In this window, enter your e-mail address, password, password confirmation, captcha and agree to the Terms of Use. Click the Sign Up button. Welcome to the Exchange!"/>
