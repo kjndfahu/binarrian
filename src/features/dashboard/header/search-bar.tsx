@@ -37,20 +37,20 @@ export function SearchBar({ isNotificationOpen, setIsNotificationOpen, notificat
     return (
         <div className="flex justify-end w-full items-center md:gap-6 gap-4">
             <motion.div
-                className="md:flex items-center justify-between hidden rounded-full py-2 px-6 faq-bg"
-                animate={{ flex: isInputFocused ? 1 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="md:flex items-center flex-1 justify-between hidden rounded-full py-2 px-6 faq-bg"
+                animate={{flex: 1}}
+                transition={{duration: 0.3, ease: "easeInOut"}}
             >
                 <input
                     placeholder="Search"
-                    className="text-[16px] leading-6 outline-0 ring-0 placeholder:text-white text-white"
+                    className="text-[16px] w-full leading-6 outline-0 ring-0 placeholder:text-white text-white"
                     type="text"
                     onFocus={() => setIsInputFocused(true)}
                     onBlur={() => setIsInputFocused(false)}
                 />
-                <img src="/img/search-logo.svg" alt="search" />
+                <img src="/img/search-logo.svg" alt="search"/>
             </motion.div>
-            <img className="md:hidden flex cursor-pointer" src="/img/search-logo.svg" alt="search" />
+            <img className="md:hidden flex cursor-pointer" src="/img/search-logo.svg" alt="search"/>
             <div className="flex items-center justify-center relative w-[25px] h-[25px]">
                 <img
                     ref={bellRef}

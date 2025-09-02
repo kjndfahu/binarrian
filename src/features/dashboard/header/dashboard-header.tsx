@@ -14,7 +14,7 @@ export function DashboardHeader() {
     const notificationRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="flex flex-col w-full md:py-[25px] py-6 lg:px-8 md:px-5 px-4 gap-6">
+        <div className="flex flex-col w-full md:py-[25px] py-6 lg:px-8 md:px-5 px-4 gap-6 relative ">
             <div className="flex gap-5 w-full items-center justify-between">
                 <img src="/img/logo.svg" alt="logo"
                      className="md:hidden flex relative z-10 cursor-pointer pointer-events-none select-none"/>
@@ -40,6 +40,7 @@ export function DashboardHeader() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2, ease: "easeInOut" }}
+                        style={{ position: "absolute", top: "-30px", right: "50px", zIndex: 1000 }}
                     >
                         <NotificationBlock />
                     </motion.div>

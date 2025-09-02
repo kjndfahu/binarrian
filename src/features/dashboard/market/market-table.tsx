@@ -73,7 +73,7 @@ export function MarketTable() {
             marketCap: "USD 247.72",
             change: "-2.43%",
             isPositive: false,
-            chartData: "/img/bnb-chart.png"
+            chartData: "/img/btc-chart.png"
         },
         {
             name: "Binance Coin",
@@ -83,7 +83,7 @@ export function MarketTable() {
             marketCap: "USD 247.72",
             change: "-2.43%",
             isPositive: false,
-            chartData: "/img/bnb-chart.png"
+            chartData: "/img/btc-chart.png"
         },
     ];
 

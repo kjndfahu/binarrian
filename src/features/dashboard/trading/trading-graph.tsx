@@ -9,7 +9,7 @@ const generateCandlestickData = () => {
     const data = [];
     let basePrice = 18432.320;
     const currentTime = new Date();
-    currentTime.setSeconds(currentTime.getSeconds() - 180); // 3 minutes ago (180 seconds)
+    currentTime.setSeconds(currentTime.getSeconds() - 180);
 
     for (let i = 0; i < 60; i++) {
         const open = basePrice + (Math.random() - 0.5) * 50;
@@ -17,7 +17,7 @@ const generateCandlestickData = () => {
         const low = open - Math.random() * 30;
         const close = open + (Math.random() - 0.5) * 20;
 
-        const time = new Date(currentTime.getTime() + i * 3000); // 3 seconds interval
+        const time = new Date(currentTime.getTime() + i * 3000);
 
         data.push({
             x: time,
@@ -32,12 +32,12 @@ const generateCandlestickData = () => {
 };
 
 const generateDepthData = () => {
-    const basePrice = 42000000; // Center around 42M
+    const basePrice = 42000000;
     const bids = [];
     const asks = [];
 
     for (let i = 0; i <= 40; i++) {
-        const price = basePrice - (i * 1000000); // 1M steps down
+        const price = basePrice - (i * 1000000);
         const volume = Math.max(1000, 6000 - (i * 100) + Math.random() * 200);
         bids.push({
             x: price,
@@ -46,7 +46,7 @@ const generateDepthData = () => {
     }
 
     for (let i = 0; i <= 50; i++) {
-        const price = basePrice + (i * 1000000); // 1M steps up
+        const price = basePrice + (i * 1000000);
         const volume = Math.max(1000, 1000 + (i * 80) + Math.random() * 200);
         asks.push({
             x: price,
@@ -73,16 +73,16 @@ const candlestickOptions: ApexOptions = {
         type: 'datetime',
         labels: {
             style: { colors: '#9CA3AF', fontSize: '12px' },
-            rotate: 0, // Horizontal labels
+            rotate: 0,
             datetimeFormatter: {
-                hour: 'HH:mm', // Format as HH:mm (e.g., 5:44)
+                hour: 'HH:mm',
             },
         },
         tickAmount: 6,
     },
     yaxis: {
         labels: {
-            show: false, // Hide y-axis labels
+            show: false,
             style: { colors: '#9CA3AF', fontSize: '12px' },
             formatter: (value: number) => value.toFixed(0),
         },
@@ -203,6 +203,7 @@ const depthOptions: ApexOptions = {
 
 export function TradingGraph() {
     const [showPopup, setShowPopup] = useState(false);
+    const [showPopupTime, setShowPopupTime] = useState(false);
     const [chartType, setChartType] = useState<'candlestick' | 'depth'>('candlestick');
 
     const candlestickData = useMemo(() => generateCandlestickData(), []);
@@ -236,6 +237,11 @@ export function TradingGraph() {
     const handlePriceClick = () => {
         setShowPopup(!showPopup);
     };
+
+    const handleTimeClick = () => {
+        setShowPopupTime(!showPopupTime);
+    };
+
 
     const handleSelectChart = (item: string) => {
         const type = item.toLowerCase() === 'price' ? 'candlestick' : 'depth';
@@ -287,9 +293,16 @@ export function TradingGraph() {
                                 )}
                             </div>
                             <div
-                                className="flex items-center justify-center cursor-pointer text-[16px] leading-[24px] text-white font-semibold border-[1px] border-white rounded-full px-4 py-2 h-[42px] gap-2">
+                                onClick={handleTimeClick}
+                                className="flex relative items-center justify-center cursor-pointer text-[16px] leading-[24px] text-white font-semibold border-[1px] border-white rounded-full px-4 py-2 h-[42px] gap-2">
                                 3 sec
                                 <img src="/img/arrow-right.svg" className="w-[14px] h-[14px] rotate-90"/>
+                                {showPopupTime && (
+                                    <Popup
+                                        styles="top-[50px] right-0"
+                                        items={['1 sec', '2 sec', '3 sec']}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>

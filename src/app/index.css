@@ -14,8 +14,19 @@
   border-image-source: linear-gradient(269.87deg, rgba(83, 64, 129, 0.3) 0.18%, rgba(119, 103, 159, 0) 102.37%);
 }
 
-.header-btns-bg{
-  background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+.header-btns-bg {
+  background: conic-gradient(
+          from 181.06deg at 50% 50%,
+          rgba(71, 47, 140, 0.4) 0deg,
+          rgba(0, 0, 0, 0) 172.66deg,
+          #493582 281.25deg,
+          rgba(71, 47, 140, 0.4) 360deg
+  );
+  transition: filter 0.3s ease;
+}
+
+.header-btns-bg:hover {
+  filter: brightness(0.85); /* затемнение */
 }
 
 .header-btns-border{
@@ -33,12 +44,35 @@
   color: transparent;
 }
 
-.get-started-bg{
+.get-started-bg {
   background: radial-gradient(35.55% 100% at 49.58% 0%, #B189FF 0%, #8144F6 100%);
+  transition: background 0.3s ease;
 }
 
-.hero-signin-bg{
-  background: conic-gradient(from 181.06deg at 50% 50%, rgba(71, 47, 140, 0.4) 0deg, rgba(0, 0, 0, 0) 172.66deg, #493582 281.25deg, rgba(71, 47, 140, 0.4) 360deg);
+.get-started-bg:hover {
+  background: radial-gradient(35.55% 100% at 49.58% 0%, #9A6CFF 0%, #672FD9 100%);
+}
+
+
+.hero-signin-bg {
+  background: conic-gradient(
+          from 181.06deg at 50% 50%,
+          rgba(71, 47, 140, 0.4) 0deg,
+          rgba(0, 0, 0, 0) 172.66deg,
+          #493582 281.25deg,
+          rgba(71, 47, 140, 0.4) 360deg
+  );
+  transition: background 0.3s ease;
+}
+
+.hero-signin-bg:hover {
+  background: conic-gradient(
+          from 181.06deg at 50% 50%,
+          rgba(50, 30, 110, 0.5) 0deg,
+          rgba(0, 0, 0, 0) 172.66deg,
+          #33245E 281.25deg,
+          rgba(50, 30, 110, 0.5) 360deg
+  );
 }
 
 .hero-signin-border{
@@ -126,8 +160,17 @@
 
 }
 
-.visit-btn{
-  background: radial-gradient(35.55% 100% at 49.58% 0%, #B189FF 0%, #8144F6 100%);
+.visit-btn {
+  background: radial-gradient(
+          35.55% 100% at 49.58% 0%,
+          #B189FF 0%,
+          #8144F6 100%
+  );
+  transition: filter 0.3s ease;
+}
+
+.visit-btn:hover {
+  filter: brightness(0.85); /* затемняет */
 }
 
 .faq-bg{

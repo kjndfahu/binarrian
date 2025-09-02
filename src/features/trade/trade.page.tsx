@@ -6,7 +6,7 @@ import { BuyBlock } from "../dashboard/trading/buy-block";
 export function TradePage() {
     return (
         <div
-            className="flex relative overflow-hidden lg:flex-row flex-col-reverse h-full gap-6 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 py-[46px] relative items-stretch">
+            className="flex relative overflow-hidden lg:flex-row flex-col-reverse h-full gap-6 2xl:px-20 xl:px-16 lg:px-12 md:px-10 sm:px-8 px-6 py-[60px] relative items-stretch">
             <div className="flex flex-col gap-6">
                 <SearchBlockTrade/>
                 <BuyBlock/>
