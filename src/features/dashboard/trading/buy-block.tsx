@@ -38,7 +38,7 @@ export function BuyBlock() {
 					</div>
 
 					<div className="flex flex-col gap-[17px]">
-						{/* Limit price */}
+						
 						<div className="flex flex-col gap-2">
 							<h5 className="text-[16px] font-bold text-[#CACACA] leading-6">Limit price</h5>
 							<div className="flex items-center justify-between border-b-[1px] border-[#34384C] py-4">
@@ -51,7 +51,7 @@ export function BuyBlock() {
 							</div>
 						</div>
 
-						{/* Amount */}
+						
 						<div className="flex flex-col gap-2">
 							<h5 className="text-[16px] font-bold text-[#CACACA] leading-6">Amount</h5>
 							<div className="flex items-center justify-between border-b-[1px] border-[#34384C] py-4">
@@ -64,7 +64,7 @@ export function BuyBlock() {
 							</div>
 						</div>
 
-						{/* Order Type */}
+						
 						<div className="flex relative flex-col gap-4">
 							<h5 className="text-[16px] font-bold text-[#CACACA] leading-6">Order Type</h5>
 							<div
@@ -92,7 +92,7 @@ export function BuyBlock() {
 						</div>
 					</div>
 
-					{/* Buttons */}
+					
 					<div className="flex w-full items-center justify-between gap-4 mt-8">
 						<button className="text-[16px] w-full h-[58px] rounded-full cursor-pointer text-[#11CABE] leading-[20px] font-semibold border-[1px] border-[#11CABE]">
 							Buy

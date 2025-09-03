@@ -37,7 +37,7 @@ export function OrderTypePopup({
         }
     }, [isOpen])
 
-    // закрытие при клике вне
+    
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             const target = event.target as Node
@@ -70,7 +70,7 @@ export function OrderTypePopup({
     return (
         <div
             ref={popupRef}
-            className={`absolute z-[100] top-[120px] left-0 right-0 flex flex-col buy-crypto-bg text-white font-semibold text-[14px] leading-6 border-[1px] border-[#D0DCFF8F] rounded-[20px] overflow-hidden
+            className={`absolute z-[100] top-[120px] left-0 right-0 flex flex-col backdrop-blur-2xl buy-crypto-bg text-white font-semibold text-[14px] leading-6 border-[1px] border-[#D0DCFF8F] rounded-[20px] overflow-hidden
         transition-all duration-200 transform origin-top
         ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
             style={{ height: "180px" }}
